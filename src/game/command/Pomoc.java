@@ -1,5 +1,5 @@
 package game.command;
 
-public class Help{
+public class Pomoc {
 
 }
