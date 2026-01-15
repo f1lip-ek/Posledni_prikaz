@@ -1,9 +1,9 @@
 package game.command;
 
-public abstract class Command {
+public interface Command {
 
-    public abstract String execute();
+    String execute();
 
-    public abstract boolean exit();
+    boolean exit();
 
 }

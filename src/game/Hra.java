@@ -3,16 +3,18 @@ package game;
 import game.command.Command;
 import game.lokace.Lokace;
 import game.postavy.Entita;
+import game.postavy.Hrac;
 
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class Hra {
 
-    private boolean exit = false;
-    private HashMap<String, Command> prikazy;
+    private boolean konecHry = false;
+    private Hrac hrac;
     private HashMap<String, Lokace> herniMapa;
-    private Entita[] NPCs;
+    private HashMap<String, Command> prikazy;
+    private Entita[] postavy;
     private Scanner sc = new Scanner(System.in);
 
 
@@ -21,7 +23,7 @@ public class Hra {
 
     }
 
-    private void udelatCommand(){
+    private void zpracujPrikaz(){
 
     }
 

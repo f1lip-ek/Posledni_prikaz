@@ -1,33 +1,40 @@
 package game.lokace;
 
 import game.itemy.Item;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public abstract class Lokace {
 
-    protected String jmenoLokace;
-    protected ArrayList<Item> itemyVLokaci;
+    protected String nazev;
+    protected String popis;
     protected Lokace[] vychody;
+    protected ArrayList<Item> itemyVLokaci;
 
-    public String getJmenoLokace(){
-        return jmenoLokace;
+    public Lokace(String nazev, String popis) {
+        this.nazev = nazev;
+        this.popis = popis;
+        this.itemyVLokaci = new ArrayList<>();
+    }
+
+    public String getNazev(){
+        return nazev;
+    }
+
+    public String getPopis(){
+        return popis;
     }
 
     public String getItemyVLokaci(){
         return itemyVLokaci.toString();
     }
 
-    public String getVychody(){
-        return Arrays.toString(vychody);
+    public Lokace[] getVychody(){
+        return vychody;
     }
 
-    public boolean odebratItem(Item item){
-        return itemyVLokaci.remove(item);
+    public Item odebratItem(Item item){
+        return itemyVLokaci.getFirst();
     }
-
-    public abstract String getPopisLokace();
 
 
 

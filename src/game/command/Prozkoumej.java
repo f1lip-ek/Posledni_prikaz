@@ -1,7 +1,6 @@
 package game.command;
 
-public class Pomoc implements Command{
-
+public class Prozkoumej implements Command {
     @Override
     public String execute() {
         return "";
