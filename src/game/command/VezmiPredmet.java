@@ -1,10 +1,10 @@
 package game.command;
 
-public class Pohyb implements Command{
+public class VezmiPredmet implements Command{
 
     private int cislo;
 
-    public Pohyb(int cislo) {
+    public VezmiPredmet(int cislo) {
         this.cislo = cislo;
     }
 

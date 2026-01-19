@@ -1,9 +1,20 @@
 package game.command;
 
 public class Boj implements Command{
+
+    private int cislo;
+
+    public Boj(int cislo) {
+        this.cislo = cislo;
+    }
+
     @Override
     public String execute() {
-        return "";
+        if (cislo == 1){
+            return "";
+        }else {
+            return "";
+        }
     }
 
     @Override

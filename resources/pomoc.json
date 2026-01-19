@@ -1,0 +1,17 @@
+[
+  "ls -c",
+  "cd /<misto>",
+
+  "get <predmet>",
+  "ls -p",
+
+  "run <predmet>",
+  "cat -i",
+
+  "kill",
+  "exit",
+
+  "ls -q",
+
+  "help"
+]

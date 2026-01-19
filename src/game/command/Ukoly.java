@@ -1,6 +1,7 @@
 package game.command;
 
-public class Vezmi implements Command {
+public class Ukoly implements Command{
+
     @Override
     public String execute() {
         return "";

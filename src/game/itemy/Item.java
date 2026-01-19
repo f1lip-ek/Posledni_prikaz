@@ -1,8 +1,8 @@
 package game.itemy;
 
-public abstract class Item {
+public class Item {
 
-    protected String id;
+    private String id;
 
     protected String jmeno;
     protected String popis;
@@ -24,4 +24,20 @@ public abstract class Item {
         return popis;
     }
 
+    public String getId(){
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id='" + id + '\'' +
+                ", jmeno='" + jmeno + '\'' +
+                ", popis='" + popis + '\'' +
+                ", poskozeni=" + poskozeni +
+                ", jeAktivni=" + jeAktivni +
+                ", obsahujeVirus=" + obsahujeVirus +
+                ", akce='" + akce + '\'' +
+                '}';
+    }
 }
