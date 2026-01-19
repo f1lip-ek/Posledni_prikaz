@@ -5,10 +5,14 @@ import java.util.ArrayList;
 
 public abstract class Lokace {
 
+    protected String id;
+
     protected String nazev;
     protected String popis;
     protected Lokace[] vychody;
     protected ArrayList<Item> itemyVLokaci;
+    protected boolean porazenyGolias;
+    protected boolean kontrolaServeru;
 
     public Lokace(String nazev, String popis) {
         this.nazev = nazev;

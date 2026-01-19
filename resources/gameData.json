@@ -1,0 +1,105 @@
+{
+  "itemy" : [
+    {
+      "id" : "pistole",
+      "jmeno" : "Karlova pistole",
+      "popis" : "Pistole",
+      "poskozeni" : 16,
+      "jeAktivni" : null,
+      "obsahujeVirus" : null,
+      "akce" : "Bum"
+    },
+    {
+      "id" : "kamera",
+      "jmeno" : "Sledovaci Zarizeni",
+      "popis" : "Pistole",
+      "poskozeni" : null,
+      "jeAktivni" : false,
+      "obsahujeVirus" : null,
+      "akce" : ""
+    },
+    {
+      "id" : "usb",
+      "jmeno" : "USB flash disk",
+      "popis" : "flash disk s virem",
+      "poskozeni" : null,
+      "jeAktivni" : null,
+      "obsahujeVirus" : true,
+      "akce" : "Virus nahran."
+    }
+  ],
+  "lokace" : [
+    {
+      "id" : "byt",
+      "jmeno" : "Karluv byt",
+      "popis" : "",
+      "vychody" : ["ulice"],
+      "items" : ["pistole", "usb"],
+      "porazenyGolias" : null,
+      "kontrolaServeru" : null
+    },
+    {
+      "id" : "ulice",
+      "jmeno" : "Opustena ulice",
+      "popis" : "",
+      "vychody" : ["byt", "recepce"],
+      "items" : [],
+      "porazenyGolias" : false,
+      "kontrolaServeru" : null
+    },
+    {
+      "id" : "recepce",
+      "jmeno" : "Recepce NeuroNetu",
+      "popis" : "",
+      "vychody" : ["ulice", "chodba"],
+      "items" : ["kamera"],
+      "porazenyGolias" : null,
+      "kontrolaServeru" : null
+    },
+    {
+      "id" : "chodba",
+      "jmeno" : "Chodba v NeuroNet",
+      "popis" : "",
+      "vychody" : ["recepce", "rozvodna", "lab", "terminal", "serverovna"],
+      "items" : [],
+      "porazenyGolias" : null,
+      "kontrolaServeru" : null
+    },
+    {
+      "id" : "rozvodna",
+      "jmeno" : "Hlavni rozvodna elektriny",
+      "popis" : "",
+      "vychody" : ["recepce"],
+      "items" : [],
+      "porazenyGolias" : null,
+      "kontrolaServeru" : null
+    },
+    {
+      "id" : "lab",
+      "jmeno" : "Testovaci laborator",
+      "popis" : "",
+      "vychody" : ["recepce"],
+      "items" : [],
+      "porazenyGolias" : null,
+      "kontrolaServeru" : null
+    },
+    {
+      "id" : "terminal",
+      "jmeno" : "Terminal Alfa",
+      "popis" : "",
+      "vychody" : ["recepce"],
+      "items" : [],
+      "porazenyGolias" : null,
+      "kontrolaServeru" : null
+    },
+    {
+      "id" : "serverovna",
+      "jmeno" : "Karluv byt",
+      "popis" : "",
+      "vychody" : ["recepce"],
+      "items" : [],
+      "porazenyGolias" : null,
+      "kontrolaServeru" : false
+    }
+  ]
+}
