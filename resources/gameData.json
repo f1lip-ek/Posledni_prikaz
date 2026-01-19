@@ -26,6 +26,15 @@
       "jeAktivni" : null,
       "obsahujeVirus" : true,
       "akce" : "Virus nahran."
+    },
+    {
+      "id" : "kamen",
+      "jmeno" : "Kamen",
+      "popis" : "Kamen na hazeni",
+      "poskozeni" : 25,
+      "jeAktivni" : null,
+      "obsahujeVirus" : true,
+      "akce" : "Bum"
     }
   ],
   "lokace" : [
@@ -69,7 +78,7 @@
       "id" : "rozvodna",
       "jmeno" : "Hlavni rozvodna elektriny",
       "popis" : "",
-      "vychody" : ["recepce"],
+      "vychody" : ["chodba"],
       "items" : [],
       "porazenyGolias" : null,
       "kontrolaServeru" : null
@@ -78,7 +87,7 @@
       "id" : "lab",
       "jmeno" : "Testovaci laborator",
       "popis" : "",
-      "vychody" : ["recepce"],
+      "vychody" : ["chodba"],
       "items" : [],
       "porazenyGolias" : null,
       "kontrolaServeru" : null
@@ -87,7 +96,7 @@
       "id" : "terminal",
       "jmeno" : "Terminal Alfa",
       "popis" : "",
-      "vychody" : ["recepce"],
+      "vychody" : ["chodba"],
       "items" : [],
       "porazenyGolias" : null,
       "kontrolaServeru" : null
@@ -96,10 +105,48 @@
       "id" : "serverovna",
       "jmeno" : "Karluv byt",
       "popis" : "",
-      "vychody" : ["recepce"],
+      "vychody" : ["chodba"],
       "items" : [],
       "porazenyGolias" : null,
       "kontrolaServeru" : false
+    }
+  ],
+  "postavy" : [
+    {
+      "id" : "hrac",
+      "jmeno" : "Karel",
+      "zivoty" : 50,
+      "jeNepratelska" : false,
+      "dialogy" : [],
+      "inventar" : [],
+      "MAX_NOSNOST" : 2
+    },
+    {
+      "id" : "ai",
+      "jmeno" : "Cognitive AI v9",
+      "zivoty" : 2147483647,
+      "jeNepratelska" : true,
+      "dialogy" : [],
+      "inventar" : null,
+      "MAX_NOSNOST" : null
+    },
+    {
+      "id" : "ai2",
+      "jmeno" : "NIC",
+      "zivoty" : 2147483647,
+      "jeNepratelska" : false,
+      "dialogy" : [],
+      "inventar" : null,
+      "MAX_NOSNOST" : null
+    },
+    {
+      "id" : "npc",
+      "jmeno" : "Golias",
+      "zivoty" : 25,
+      "jeNepratelska" : true,
+      "dialogy" : [],
+      "inventar" : ["kamen", "kamen"],
+      "MAX_NOSNOST" : 2
     }
   ]
 }

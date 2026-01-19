@@ -11,7 +11,7 @@ public class Hrac extends Entita {
     private final int MAX_NOSNOST = 2;
 
     public Hrac(String jmeno, Lokace aktualniLokace) {
-        super(jmeno, aktualniLokace);
+        super(jmeno, aktualniLokace, false);
         this.inventar = new ArrayList<>(MAX_NOSNOST);
     }
 
