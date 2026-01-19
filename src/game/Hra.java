@@ -2,6 +2,7 @@ package game;
 
 import game.command.Command;
 import game.command.Pomoc;
+import game.command.Quit;
 import game.itemy.Item;
 import game.postavy.Entita;
 
@@ -39,6 +40,7 @@ public class Hra {
 
     private void inicializaceCommandu(){
         prikazy.put("help", new Pomoc());
+        prikazy.put("quit", new Quit());
     }
 
     private void zpracujPrikaz(){
