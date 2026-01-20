@@ -1,12 +1,11 @@
 package game;
 
-import game.command.Command;
-import game.command.Pomoc;
-import game.command.Quit;
+import game.command.*;
 import game.itemy.Item;
 import game.postavy.Entita;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -17,12 +16,12 @@ public class Hra {
     private HashMap<String, Command> prikazy;
     private Entita[] postavy;
     private Scanner sc;
-    private GameData data;
+    private HraData data;
     private ArrayList<Item> itemy;
 
     private void inicializaceVlastnosti(){
         this.sc = new Scanner(System.in);
-        this.data = GameData.loadGameDataFromResources("/gamedata.json");
+        this.data = HraData.loadGameDataFromResources("/gamedata.json");
         this.hrac = data.getPostavy().getFirst();
         this.prikazy = new HashMap<>();
         this.postavy = data.getPostavy().toArray(new Entita[0]);
@@ -41,18 +40,55 @@ public class Hra {
     private void inicializaceCommandu(){
         prikazy.put("help", new Pomoc());
         prikazy.put("quit", new Quit());
+        prikazy.put("ls -q", new Ukoly());
+        prikazy.put("kill", new Boj(1));
+        prikazy.put("exit", new Boj(2));
+        prikazy.put("run", new PouzijPredmet(1));
+        prikazy.put("cat -i", new PouzijPredmet(2));
+        prikazy.put("get", new VezmiPredmet(1));
+        prikazy.put("ls -p", new VezmiPredmet(2));
+        prikazy.put("ls -c", new Pohyb(1));
+        prikazy.put("cd /", new Pohyb(2));
+
     }
 
     private void zpracujPrikaz(){
         System.out.print(">>");
-        String prikaz = sc.next();
-        prikaz = prikaz.trim().toLowerCase();
-        if (prikazy.containsKey(prikaz)) {
-            System.out.println(">> " + prikazy.get(prikaz).execute());
-            konecHry = prikazy.get(prikaz).exit();
+        String prikaz = sc.nextLine();
+        String[] pole = prikaz.split(" ");
+        pole[0] = pole[0].trim().toLowerCase();
+        String[] textovePole = getPrikaz(pole);
+
+        System.out.println(Arrays.toString(textovePole));
+
+//        System.out.println(Arrays.toString(textovePole));
+
+        if (prikazy.containsKey(textovePole[0])) {
+            System.out.println(">> " + prikazy.get(textovePole[0]).execute(textovePole));
+            konecHry = prikazy.get(textovePole[0]).exit();
         } else {
             System.out.println(">> Nedefinovany prikaz");
         }
+    }
+
+    private String[] getPrikaz(String[] pole){
+        if (!prikazy.containsKey(pole[0]) && pole.length > 1) {
+            String text = pole[0] + " " + pole[1];
+            if (prikazy.containsKey(text)){
+                pole[0] = text;
+
+                for (int i = 1; i < pole.length; i++) {
+                    if (i + 1 < pole.length) {
+                        pole[i] = pole[i + 1];
+                    } else if (i == pole.length-1) {
+                        pole[i] = "";
+                    }
+                }
+
+                pole = Arrays.copyOf(pole, pole.length-1);
+            }
+            }
+        return pole;
     }
 
     public void start(){

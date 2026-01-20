@@ -13,7 +13,7 @@ import java.util.ArrayList;
 /**
  *
  */
-public class GameData {
+public class HraData {
 
     private ArrayList<Item> items;
     private ArrayList<Entita> postavy;
@@ -24,13 +24,13 @@ public class GameData {
      * @param cestaKSouboru
      * @return
      */
-    public static GameData loadGameDataFromResources(String cestaKSouboru) {
+    public static HraData loadGameDataFromResources(String cestaKSouboru) {
         Gson gson = new Gson();
         try (InputStream is = Main.class.getResourceAsStream(cestaKSouboru)) {
             if (is == null) {
                 throw new IllegalStateException("Nenalezen resource: " + cestaKSouboru + " (zkontrolujte, že soubor je v src/main/resources).");
             }
-            return gson.fromJson(new InputStreamReader(is, StandardCharsets.UTF_8), GameData.class);
+            return gson.fromJson(new InputStreamReader(is, StandardCharsets.UTF_8), HraData.class);
 
         } catch (Exception e) {
             throw new RuntimeException("Chyba při načítání JSON: " + e.getMessage());

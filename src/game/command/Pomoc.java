@@ -10,11 +10,11 @@ import java.util.Arrays;
 public class Pomoc implements Command{
 
     @Override
-    public String execute() {
+    public String execute(Object object) {
         Gson gson = new Gson();
         try (Reader reader = new FileReader("resources/pomoc.json")) {
-            String[] pole = gson.fromJson(reader, String[].class);
-            return Arrays.toString(pole);
+            String[] pomoc = gson.fromJson(reader, String[].class);
+            return Arrays.toString(pomoc);
         } catch (FileNotFoundException ex){
             System.err.println(ex.getMessage());
         } catch (Exception e) {

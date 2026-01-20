@@ -9,11 +9,11 @@ public class Pohyb implements Command{
     }
 
     @Override
-    public String execute() {
+    public String execute(Object object) {
         if (cislo == 1){
-            return "";
+            return "vypsani vychodu";
         }else {
-            return "";
+            return "zmena mista";
         }
     }
 
