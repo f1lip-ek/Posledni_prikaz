@@ -15,11 +15,10 @@ public class Pomoc implements Command{
         String cestaKSouboru = "/pomoc.json";
         Gson gson = new Gson();
         String[] pole;
-        try (InputStream is = Main.class.getResourceAsStream(cestaKSouboru)) {
+        try (Reader reader = new FileReader(cestaKSouboru)) {
             if (is == null) {
                 throw new IllegalStateException("Nenalezen resource: " + cestaKSouboru + " (zkontrolujte, že soubor je v src/main/resources).");
             }
-            InputStreamReader reader = new InputStreamReader(is, StandardCharsets.UTF_8);
 
             pole = gson.fromJson(reader, String[].class);
         } catch (Exception e) {
