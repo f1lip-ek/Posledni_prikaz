@@ -4,12 +4,12 @@ public class Item {
 
     private String id;
 
-    protected String jmeno;
-    protected String popis;
-    protected int poskozeni;
-    protected boolean jeAktivni;
-    protected boolean obsahujeVirus;
-    protected String akce;
+    private String jmeno;
+    private String popis;
+    private int poskozeni;
+    private boolean jeAktivni;
+    private boolean obsahujeVirus;
+    private String akce;
 
     public Item(String jmeno, String popis) {
         this.jmeno = jmeno;
@@ -20,12 +20,28 @@ public class Item {
         return jmeno;
     }
 
-    public String pouzit(){
+    public String getId(){
+        return id;
+    }
+
+    public String getPopis() {
         return popis;
     }
 
-    public String getId(){
-        return id;
+    public int getPoskozeni() {
+        return poskozeni;
+    }
+
+    public boolean isJeAktivni() {
+        return jeAktivni;
+    }
+
+    public boolean isObsahujeVirus() {
+        return obsahujeVirus;
+    }
+
+    public String getAkce() {
+        return akce;
     }
 
     @Override

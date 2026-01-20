@@ -4,25 +4,62 @@ import game.itemy.Item;
 import game.lokace.Lokace;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Entita {
 
-    protected String id;
+    private String id;
 
-    protected String jmeno;
-    protected String idAktualniLokace;
-    protected Lokace aktualniLokace;
-    protected int zivoty;
-    protected boolean jeNepratelska;
-    protected String[] dialogy;
-    protected ArrayList<String> idItemu;
-    protected ArrayList<Item> inventar;
-    protected int MAX_NOSNOST;
+    private String jmeno;
+    private String idAktualniLokace;
+    private Lokace aktualniLokace;
+    private int zivoty;
+    private boolean jeNepratelska;
+    private String[] dialogy;
+    private ArrayList<String> idItemu;
+    private ArrayList<Item> inventar;
+    private int MAX_NOSNOST;
 
     public Entita() {}
 
     public String getJmeno(){
         return jmeno;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getIdAktualniLokace() {
+        return idAktualniLokace;
+    }
+
+    public Lokace getAktualniLokace() {
+        return aktualniLokace;
+    }
+
+    public int getZivoty() {
+        return zivoty;
+    }
+
+    public boolean isJeNepratelska() {
+        return jeNepratelska;
+    }
+
+    public String[] getDialogy() {
+        return dialogy;
+    }
+
+    public ArrayList<String> getIdItemu() {
+        return idItemu;
+    }
+
+    public ArrayList<Item> getInventar() {
+        return inventar;
+    }
+
+    public int getMAX_NOSNOST() {
+        return MAX_NOSNOST;
     }
 
     public void setInventar(ArrayList<Item> vsechnyItemy){
@@ -42,5 +79,21 @@ public class Entita {
                 break;
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Entita{" +
+                "id='" + id + '\'' +
+                ", jmeno='" + jmeno + '\'' +
+                ", idAktualniLokace='" + idAktualniLokace + '\'' +
+                ", aktualniLokace=" + aktualniLokace +
+                ", zivoty=" + zivoty +
+                ", jeNepratelska=" + jeNepratelska +
+                ", dialogy=" + Arrays.toString(dialogy) +
+                ", idItemu=" + idItemu +
+                ", inventar=" + inventar +
+                ", MAX_NOSNOST=" + MAX_NOSNOST +
+                '}';
     }
 }

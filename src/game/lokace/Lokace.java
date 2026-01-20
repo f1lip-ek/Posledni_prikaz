@@ -6,15 +6,15 @@ import java.util.Arrays;
 
 public class Lokace {
 
-    protected String id;
-    protected String nazev;
-    protected String popis;
-    protected String[] idVychodu;
-    protected Lokace[] vychody;
-    protected ArrayList<String> items;
-    protected ArrayList<Item> itemyVLokaci;
-    protected boolean porazenyGolias;
-    protected boolean kontrolaServeru;
+    private String id;
+    private String nazev;
+    private String popis;
+    private String[] idVychodu;
+    private Lokace[] vychody;
+    private ArrayList<String> items;
+    private ArrayList<Item> itemyVLokaci;
+    private boolean porazenyGolias;
+    private boolean kontrolaServeru;
 
     public Lokace() {
         this.itemyVLokaci = new ArrayList<>();
@@ -32,8 +32,24 @@ public class Lokace {
         return itemyVLokaci.toString();
     }
 
-    public String[] getVychody(){
+    public String[] getIdVychodu(){
         return idVychodu;
+    }
+
+    public Lokace[] getVychody() {
+        return vychody;
+    }
+
+    public ArrayList<String> getItems() {
+        return items;
+    }
+
+    public boolean isPorazenyGolias() {
+        return porazenyGolias;
+    }
+
+    public boolean isKontrolaServeru() {
+        return kontrolaServeru;
     }
 
     public Item odebratItem(Item item){
