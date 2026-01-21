@@ -2,7 +2,7 @@ package game.command;
 
 public interface Command {
 
-    String execute(Object object);
+    String execute(String text);
 
     boolean exit();
 

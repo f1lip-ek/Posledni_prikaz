@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class Pomoc implements Command{
 
     @Override
-    public String execute(Object object) {
+    public String execute(String text) {
         Gson gson = new Gson();
         try (Reader reader = new FileReader("resources/pomoc.json")) {
             String[] pomoc = gson.fromJson(reader, String[].class);

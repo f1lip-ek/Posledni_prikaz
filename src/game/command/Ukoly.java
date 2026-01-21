@@ -3,7 +3,7 @@ package game.command;
 public class Ukoly implements Command{
 
     @Override
-    public String execute(Object object) {
+    public String execute(String text) {
         return "ukoly";
     }
 

@@ -2,7 +2,7 @@ package game.command;
 
 public class Quit implements Command{
     @Override
-    public String execute(Object object) {
+    public String execute(String text) {
         return "Hra se ukoncuje.";
     }
 

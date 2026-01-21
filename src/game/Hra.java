@@ -41,15 +41,14 @@ public class Hra {
         prikazy.put("help", new Pomoc());
         prikazy.put("quit", new Quit());
         prikazy.put("ls -q", new Ukoly());
-        prikazy.put("kill", new Boj(1));
-        prikazy.put("exit", new Boj(2));
-        prikazy.put("run", new PouzijPredmet(1));
-        prikazy.put("cat -i", new PouzijPredmet(2));
-        prikazy.put("get", new VezmiPredmet(1));
-        prikazy.put("ls -p", new VezmiPredmet(2));
-        prikazy.put("ls -c", new Pohyb(1));
-        prikazy.put("cd /", new Pohyb(2));
-
+        prikazy.put("kill", new Boj(1, hrac));
+        prikazy.put("exit", new Boj(2, hrac));
+        prikazy.put("run", new PouzijPredmet(1, hrac));
+        prikazy.put("cat -i", new PouzijPredmet(2, hrac));
+        prikazy.put("get", new VezmiPredmet(1, hrac));
+        prikazy.put("ls -p", new VezmiPredmet(2, hrac));
+        prikazy.put("ls -c", new Pohyb(1, hrac, data.getLokace()));
+        prikazy.put("cd /", new Pohyb(2, hrac, data.getLokace()));
     }
 
     private void zpracujPrikaz(){
@@ -64,7 +63,7 @@ public class Hra {
 //        System.out.println(Arrays.toString(textovePole));
 
         if (prikazy.containsKey(textovePole[0])) {
-            System.out.println(">> " + prikazy.get(textovePole[0]).execute(textovePole));
+            System.out.println(">> " + prikazy.get(textovePole[0]).execute(textovePole[1]));
             konecHry = prikazy.get(textovePole[0]).exit();
         } else {
             System.out.println(">> Nedefinovany prikaz");
