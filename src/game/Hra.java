@@ -59,8 +59,8 @@ public class Hra {
         prikazy.put("cat -i", new PouzijPredmet(2, hrac));
         prikazy.put("get", new VezmiPredmet(1, hrac));
         prikazy.put("ls -p", new VezmiPredmet(2, hrac));
-        prikazy.put("ls -c", new Pohyb(1, hrac));
-        prikazy.put("cd", new Pohyb(2, hrac));
+        prikazy.put("ls -c", new Pohyb(1, hrac, data.getLokace()));
+        prikazy.put("cd", new Pohyb(2, hrac, data.getLokace()));
     }
 
     /**

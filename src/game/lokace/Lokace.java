@@ -11,8 +11,8 @@ public class Lokace {
     private String id;
     private String nazev;
     private String popis;
-    private String[] idVychodu;
-    private Lokace[] vychody;
+    private ArrayList<String> idVychodu;
+    private ArrayList<Lokace> vychody;
     private ArrayList<String> items;
     private ArrayList<Item> itemyVLokaci;
     private boolean porazenyGolias;
@@ -20,6 +20,8 @@ public class Lokace {
 
     public Lokace() {
         this.itemyVLokaci = new ArrayList<>();
+        this.vychody = new ArrayList<>();
+        this.idVychodu = new ArrayList<>();
     }
 
     public String getNazev(){
@@ -34,11 +36,11 @@ public class Lokace {
         return itemyVLokaci.toString();
     }
 
-    public String[] getIdVychodu(){
+    public ArrayList<String> getIdVychodu(){
         return idVychodu;
     }
 
-    public Lokace[] getVychody() {
+    public ArrayList<Lokace> getVychody() {
         return vychody;
     }
 
@@ -81,11 +83,10 @@ public class Lokace {
      * @param vsechnyLokace ArrayList vsechnych hernich lokaci
      */
     public void setVychody(ArrayList<Lokace> vsechnyLokace){
-        vychody = new Lokace[idVychodu.length];
-        for (int i = 0; i < idVychodu.length; i++) {
+        for (int i = 0; i < idVychodu.size(); i++) {
             for (int j = 0; j < vsechnyLokace.size(); j++) {
-                if (idVychodu[i].equals(vsechnyLokace.get(j).getId())){
-                    vychody[i] = vsechnyLokace.get(j);
+                if (idVychodu.get(i).equals(vsechnyLokace.get(j).getId())){
+                    vychody.add(vsechnyLokace.get(j));
                 }
             }
         }
