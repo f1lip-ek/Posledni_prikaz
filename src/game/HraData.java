@@ -11,7 +11,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 /**
- *
+ * Reprezentuje herní data načtená ze souboru JSON. Tato třída slouží jako
+ * datový kontejner pro veškerý statický obsah hry, jako jsou předměty,
+ * postavy, lokace a úkoly.
  */
 public class HraData {
 
@@ -20,9 +22,9 @@ public class HraData {
     private ArrayList<Lokace> lokace;
 
     /**
-     *
-     * @param cestaKSouboru
-     * @return
+     * Načte herní data ze souboru JSON.
+     * @param cestaKSouboru cesta ke zdrojovému souboru (resources)
+     * @return objekt GameData naplněný načtenými daty
      */
     public static HraData loadGameDataFromResources(String cestaKSouboru) {
         Gson gson = new Gson();
