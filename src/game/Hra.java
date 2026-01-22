@@ -19,6 +19,9 @@ public class Hra {
     private HraData data;
     private ArrayList<Item> itemy;
 
+    /**
+     * Metoda ktera inicializuje vsechny vlastnosti tridy Hra
+     */
     private void inicializaceVlastnosti(){
         this.sc = new Scanner(System.in);
         this.data = HraData.loadGameDataFromResources("/gamedata.json");
@@ -28,7 +31,10 @@ public class Hra {
         this.itemy = data.getItems();
     }
 
-    public void setListy(){
+    /**
+     * Metoda ktera naplni vsechny ArrayListy/pole ve hre
+     */
+    private void setListy(){
         hrac.setInventar(itemy);
         hrac.setIdAktualniLokace(data.getLokace());
         for (int i = 0; i < data.getLokace().size(); i++) {
@@ -37,6 +43,9 @@ public class Hra {
         }
     }
 
+    /**
+     * Metoda na vlozeni vsech commandu do HashMapy
+     */
     private void inicializaceCommandu(){
         prikazy.put("help", new Pomoc());
         prikazy.put("quit", new Quit());
@@ -51,6 +60,9 @@ public class Hra {
         prikazy.put("cd", new Pohyb(2, hrac));
     }
 
+    /**
+     * Metoda ktera zpracuje prikaz ktery ji prijde
+     */
     private void zpracujPrikaz(){
         System.out.println(hrac.getAktualniLokace());
         System.out.print(">>");
@@ -76,6 +88,11 @@ public class Hra {
         }
     }
 
+    /**
+     * Metoda ktera rozdeli pole textu ktere prislo od hrace do konzole na command + ten zbytek rozdeli po slovech
+     * @param pole pole ktere je potreba rozdelit
+     * @return upravene pole
+     */
     private String[] getPrikaz(String[] pole){
         if (!prikazy.containsKey(pole[0]) && pole.length > 1) {
             String text = pole[0] + " " + pole[1];
@@ -92,10 +109,13 @@ public class Hra {
 
                 pole = Arrays.copyOf(pole, pole.length-1);
             }
-            }
+        }
         return pole;
     }
 
+    /**
+     * Metoda ktera vse spousti a obsahuje herni smycku
+     */
     public void start(){
         inicializaceVlastnosti();
         setListy();
