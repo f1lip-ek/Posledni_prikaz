@@ -6,6 +6,9 @@ import game.lokace.Lokace;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Trida ktera slouzi jako sablona ke vsem postavam
+ */
 public class Entita {
 
     private String id;
@@ -66,6 +69,10 @@ public class Entita {
         return MAX_NOSNOST;
     }
 
+    /**
+     * Metoda ktera naplni inventar hrace podle ArrayListu id itemu z JSON souboru
+     * @param vsechnyItemy ArrayList vsechnych hernich itemu
+     */
     public void setInventar(ArrayList<Item> vsechnyItemy){
         for (int i = 0; i < idItemu.size(); i++) {
             for (int j = 0; j < vsechnyItemy.size(); j++) {
@@ -76,6 +83,10 @@ public class Entita {
         }
     }
 
+    /**
+     * Metoda ktera nastavi aktualni lokaci postavy podle id lokace z JSON souboru
+     * @param vsechnyLokace ArrayList vsechnych hernich lokaci
+     */
     public void setIdAktualniLokace(ArrayList<Lokace> vsechnyLokace){
         for (int i = 0; i < vsechnyLokace.size(); i++) {
             if (idAktualniLokace.equals(vsechnyLokace.get(i).getId())){

@@ -9,6 +9,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/***
+ * Trida ktera obsahuje vsechny herni prvky a ma na starosti commandy
+ */
 public class Hra {
 
     private boolean konecHry = false;
