@@ -2,8 +2,10 @@ package game.lokace;
 
 import game.itemy.Item;
 import java.util.ArrayList;
-import java.util.Arrays;
 
+/**
+ * Trida ktera slouzi jako sablona ke vsem lokacim
+ */
 public class Lokace {
 
     private String id;
@@ -60,6 +62,10 @@ public class Lokace {
         return id;
     }
 
+    /**
+     * Metoda ktera naplni ArayList itemu v lokaci podle ArrayListu id itemu z JSON souboru
+     * @param vsechnyItemy ArrayList vsechnych hernich itemu
+     */
     public void setItemyVLokaci(ArrayList<Item> vsechnyItemy){
         for (String item : items){
             for (int j = 0; j < vsechnyItemy.size(); j++) {
@@ -70,6 +76,10 @@ public class Lokace {
         }
     }
 
+    /**
+     * Metoda ktera nastavi pole vsech vychodu podle ArrayListu id lokaci z JSON souboru
+     * @param vsechnyLokace ArrayList vsechnych hernich lokaci
+     */
     public void setVychody(ArrayList<Lokace> vsechnyLokace){
         vychody = new Lokace[idVychodu.length];
         for (int i = 0; i < idVychodu.length; i++) {

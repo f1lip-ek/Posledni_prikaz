@@ -1,5 +1,8 @@
 package game.itemy;
 
+/**
+ * Trida ktera slouzi jako sablona ke vsem itemum
+ */
 public class Item {
 
     private String id;
