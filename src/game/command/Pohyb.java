@@ -4,7 +4,6 @@ import game.lokace.Lokace;
 import game.postavy.Entita;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Trida pro command ktery meni lokaci hrace a pro command ktery zobrazuje kam hrac muze jit z aktualni lokace
