@@ -34,6 +34,10 @@ public class Entita {
         return idAktualniLokace;
     }
 
+    public void setIdLokace(String idAktualniLokace){
+        this.idAktualniLokace = idAktualniLokace;
+    }
+
     public Lokace getAktualniLokace() {
         return aktualniLokace;
     }
@@ -76,7 +80,7 @@ public class Entita {
         for (int i = 0; i < vsechnyLokace.size(); i++) {
             if (idAktualniLokace.equals(vsechnyLokace.get(i).getId())){
                 this.aktualniLokace = vsechnyLokace.get(i);
-                break;
+                return;
             }
         }
     }
@@ -87,7 +91,6 @@ public class Entita {
                 "id='" + id + '\'' +
                 ", jmeno='" + jmeno + '\'' +
                 ", idAktualniLokace='" + idAktualniLokace + '\'' +
-                ", aktualniLokace=" + aktualniLokace +
                 ", zivoty=" + zivoty +
                 ", jeNepratelska=" + jeNepratelska +
                 ", dialogy=" + Arrays.toString(dialogy) +

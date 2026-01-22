@@ -48,4 +48,24 @@ public class HraData {
     public ArrayList<Lokace> getLokace() {
         return lokace;
     }
+
+    public void setLists(){
+        for (int i = 0; i < postavy.size(); i++) {
+            postavy.get(i).setIdAktualniLokace(lokace);
+        }
+        for (int i = 0; i < lokace.size(); i++) {
+            lokace.get(i).setVychody(lokace);
+            lokace.get(i).setItemyVLokaci(items);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "HraData{" +
+                "items=" + items +
+                ", \npostavy=" + postavy +
+                ", \nlokace=" + lokace +
+                ", velikosti=" + items.size() + ", " + postavy.size() + ", " + lokace.size() +
+                '}';
+    }
 }

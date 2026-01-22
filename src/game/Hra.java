@@ -47,24 +47,30 @@ public class Hra {
         prikazy.put("cat -i", new PouzijPredmet(2, hrac));
         prikazy.put("get", new VezmiPredmet(1, hrac));
         prikazy.put("ls -p", new VezmiPredmet(2, hrac));
-        prikazy.put("ls -c", new Pohyb(1, hrac, data.getLokace()));
-        prikazy.put("cd /", new Pohyb(2, hrac, data.getLokace()));
+        prikazy.put("ls -c", new Pohyb(1, hrac));
+        prikazy.put("cd", new Pohyb(2, hrac));
     }
 
     private void zpracujPrikaz(){
+        System.out.println(hrac.getAktualniLokace());
         System.out.print(">>");
         String prikaz = sc.nextLine();
         String[] pole = prikaz.split(" ");
         pole[0] = pole[0].trim().toLowerCase();
         String[] textovePole = getPrikaz(pole);
 
-        System.out.println(Arrays.toString(textovePole));
+        //System.out.println(Arrays.toString(textovePole));
 
-//        System.out.println(Arrays.toString(textovePole));
-
-        if (prikazy.containsKey(textovePole[0])) {
+        if (prikazy.containsKey(textovePole[0]) && textovePole.length == 1) {
+            System.out.println(">> " + prikazy.get(textovePole[0]).execute(textovePole[0]));
+            konecHry = prikazy.get(textovePole[0]).exit();
+        } else if (prikazy.containsKey(textovePole[0]) && textovePole.length != 1) {
+            for (int i = 2; i < textovePole.length; i++) {
+                pole[1] += " " + textovePole[i];
+            }
             System.out.println(">> " + prikazy.get(textovePole[0]).execute(textovePole[1]));
             konecHry = prikazy.get(textovePole[0]).exit();
+            hrac.setIdAktualniLokace(data.getLokace());
         } else {
             System.out.println(">> Nedefinovany prikaz");
         }

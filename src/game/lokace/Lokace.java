@@ -88,11 +88,6 @@ public class Lokace {
                 "id='" + id + '\'' +
                 ", nazev='" + nazev + '\'' +
                 ", popis='" + popis + '\'' +
-                ", vychody=" + Arrays.toString(vychody) +
-                ", \n items=" + items +
-                ", itemyVLokaci=" + itemyVLokaci +
-                ", porazenyGolias=" + porazenyGolias +
-                ", kontrolaServeru=" + kontrolaServeru +
-                '}';
+                "}";
     }
 }

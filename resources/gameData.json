@@ -40,8 +40,8 @@
   "lokace" : [
     {
       "id" : "byt",
-      "jmeno" : "Karluv byt",
-      "popis" : "",
+      "nazev" : "Karluv byt",
+      "popis" : "Obycejny nudny byt programatora Karla pracujici pro spolecnost NeuroNet",
       "idVychodu" : ["ulice"],
       "items" : ["pistole", "usb"],
       "porazenyGolias" : null,
@@ -49,7 +49,7 @@
     },
     {
       "id" : "ulice",
-      "jmeno" : "Opustena ulice",
+      "nazev" : "Opustena ulice",
       "popis" : "",
       "idVychodu" : ["byt", "recepce"],
       "items" : [],
@@ -58,7 +58,7 @@
     },
     {
       "id" : "recepce",
-      "jmeno" : "Recepce NeuroNetu",
+      "nazev" : "Recepce NeuroNetu",
       "popis" : "",
       "idVychodu" : ["ulice", "chodba"],
       "items" : ["kamera"],
@@ -67,7 +67,7 @@
     },
     {
       "id" : "chodba",
-      "jmeno" : "Chodba v NeuroNet",
+      "nazev" : "Chodba v NeuroNet",
       "popis" : "",
       "idVychodu" : ["recepce", "rozvodna", "lab", "terminal", "serverovna"],
       "items" : [],
@@ -76,7 +76,7 @@
     },
     {
       "id" : "rozvodna",
-      "jmeno" : "Hlavni rozvodna elektriny",
+      "nazev" : "Hlavni rozvodna elektriny",
       "popis" : "",
       "idVychodu" : ["chodba"],
       "items" : [],
@@ -85,7 +85,7 @@
     },
     {
       "id" : "lab",
-      "jmeno" : "Testovaci laborator",
+      "nazev" : "Testovaci laborator",
       "popis" : "",
       "idVychodu" : ["chodba"],
       "items" : [],
@@ -94,7 +94,7 @@
     },
     {
       "id" : "terminal",
-      "jmeno" : "Terminal Alfa",
+      "nazev" : "Terminal Alfa",
       "popis" : "",
       "idVychodu" : ["chodba"],
       "items" : [],
@@ -103,7 +103,7 @@
     },
     {
       "id" : "serverovna",
-      "jmeno" : "Karluv byt",
+      "nazev" : "Karluv byt",
       "popis" : "",
       "idVychodu" : ["chodba"],
       "items" : [],

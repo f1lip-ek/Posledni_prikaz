@@ -5,5 +5,9 @@ public class Main {
         Hra h = new Hra();
         h.start();
 
+//        HraData data = HraData.loadGameDataFromResources("/gamedata.json");
+//        data.setLists();
+//        System.out.println(data);
+
     }
 }
