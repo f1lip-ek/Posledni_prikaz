@@ -1,21 +1,27 @@
 package game.command;
 
-import game.lokace.Lokace;
 import game.postavy.Entita;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Trida pro command ktery meni lokaci hrace a pro command ktery zobrazuje kam hrac muze jit z aktualni lokace
+ */
 public class Pohyb implements Command{
 
-    private int cislo;
-    private Entita hrac;
+    private final int cislo;
+    private final Entita hrac;
 
     public Pohyb(int cislo, Entita hrac) {
         this.cislo = cislo;
         this.hrac = hrac;
     }
 
+    /**
+     * Metoda pro command ktery meni lokaci hrace a take zobrazuje kam hrac muze jit
+     * @param text urcuje misto kam se ma hrac presunout
+     * @return textovy retezec ktery hrace usvedci ze se akce opravdu stala
+     */
     @Override
     public String execute(String text) {
         if (cislo == 1){
@@ -26,6 +32,10 @@ public class Pohyb implements Command{
         }
     }
 
+    /**
+     * Metoda ktera rika jestli command ukoncuje hru nebo ne
+     * @return false protoze command neukoncuje hru
+     */
     @Override
     public boolean exit() {
         return false;
