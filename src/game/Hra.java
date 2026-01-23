@@ -87,7 +87,7 @@ public class Hra {
             konecHry = prikazy.get(textovePole[0]).exit();
             hrac.setIdAktualniLokace(data.getLokace());
         } else {
-            System.out.println(">> Nedefinovany prikaz");
+            System.out.println(">> Zkus command help pro vypsani vsech commandu");
         }
     }
 
