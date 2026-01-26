@@ -17,19 +17,19 @@ public class Quit implements Command{
     @Override
     public String execute(String text) {
         System.out.println("Chcete opravdu ukoncit hru? Prijdete o veskery postup.\ny/n");
-        switch (new Scanner(System.in).next()){
+        return switch (new Scanner(System.in).next()){
             case "y" -> {
                 ukonceno = true;
-                return "Hra se ukoncuje.";
+                yield  "Hra se ukoncuje.";
             }
             case "n" -> {
                 ukonceno = false;
-                return "Hra se neukoncuje.";
+                yield  "Hra se neukoncuje.";
             }
             default -> {
-                return "Neznama volba";
+                yield  "Neznama volba";
             }
-        }
+        };
     }
 
     @Override

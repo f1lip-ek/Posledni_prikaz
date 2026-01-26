@@ -49,6 +49,10 @@ public class Entita {
         return zivoty;
     }
 
+    public void setZivoty(int zivoty) {
+        this.zivoty += zivoty;
+    }
+
     public boolean isJeNepratelska() {
         return jeNepratelska;
     }
