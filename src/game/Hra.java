@@ -53,12 +53,12 @@ public class Hra {
         prikazy.put("help", new Pomoc());
         prikazy.put("quit", new Quit());
         prikazy.put("ls -q", new Ukoly());
-        prikazy.put("kill", new Boj(1, hrac));
-        prikazy.put("exit", new Boj(2, hrac));
-        prikazy.put("run", new PouzijPredmet(1, hrac));
-        prikazy.put("cat -i", new PouzijPredmet(2, hrac));
-        prikazy.put("get", new VezmiPredmet(1, hrac));
-        prikazy.put("ls -p", new VezmiPredmet(2, hrac));
+        prikazy.put("kill", new Boj(1, hrac, postavy[3]));
+        prikazy.put("exit", new Boj(2, hrac, postavy[3]));
+        prikazy.put("run", new PouzijPredmet(1, hrac, itemy));
+        prikazy.put("cat -i", new PouzijPredmet(2, hrac, itemy));
+        prikazy.put("get", new VezmiPredmet(1, hrac, itemy));
+        prikazy.put("ls -p", new VezmiPredmet(2, hrac, itemy));
         prikazy.put("ls -c", new Pohyb(1, hrac, data.getLokace()));
         prikazy.put("cd", new Pohyb(2, hrac, data.getLokace()));
     }

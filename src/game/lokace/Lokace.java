@@ -32,8 +32,8 @@ public class Lokace {
         return popis;
     }
 
-    public String getItemyVLokaci(){
-        return itemyVLokaci.toString();
+    public ArrayList<Item> getItemyVLokaci(){
+        return itemyVLokaci;
     }
 
     public ArrayList<String> getIdVychodu(){
