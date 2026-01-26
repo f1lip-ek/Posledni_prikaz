@@ -26,9 +26,7 @@ public class Quit implements Command{
                 ukonceno = false;
                 yield  "Hra se neukoncuje.";
             }
-            default -> {
-                yield  "Neznama volba";
-            }
+            default -> "Neznama volba";
         };
     }
 
