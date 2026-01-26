@@ -5,6 +5,9 @@ import game.postavy.Entita;
 
 import java.util.ArrayList;
 
+/**
+ * Command pro Vzeti predmetu nebo pro vypsani predmetu v lokaci
+ */
 public class VezmiPredmet implements Command{
 
     private int cislo;
@@ -17,6 +20,11 @@ public class VezmiPredmet implements Command{
         this.itemy = itemy;
     }
 
+    /**
+     * Metoda ktera dovoli hraci aby pridal item z lokace do inventare
+     * @param text id itemu
+     * @return potvrzeni pro hrace ze byl item pridan do inventare
+     */
     @Override
     public String execute(String text) {
         if (cislo == 1){
@@ -44,6 +52,11 @@ public class VezmiPredmet implements Command{
         return false;
     }
 
+    /**
+     * Metoda ktera udela z id itemu item
+     * @param text id predmetu
+     * @return objekt Itemu
+     */
     public Item getItem(String text){
         for (Item item : itemy) {
             if (item.getId().equals(text)) {
