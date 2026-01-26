@@ -120,6 +120,7 @@
       "idAktualniLokace" : "byt",
       "dialogy" : [],
       "idItemu" : [],
+      "inventar" : [],
       "MAX_NOSNOST" : 2
     },
     {

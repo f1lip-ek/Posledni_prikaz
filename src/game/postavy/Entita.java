@@ -74,6 +74,7 @@ public class Entita {
      * @param vsechnyItemy ArrayList vsechnych hernich itemu
      */
     public void setInventar(ArrayList<Item> vsechnyItemy){
+        inventar = new ArrayList<>();
         for (int i = 0; i < idItemu.size(); i++) {
             for (int j = 0; j < vsechnyItemy.size(); j++) {
                 if (idItemu.get(i).equals(vsechnyItemy.get(j).getId())){
