@@ -26,24 +26,27 @@ public class Hra {
      * Metoda ktera inicializuje vsechny vlastnosti tridy Hra
      */
     private void inicializaceVlastnosti(){
-        this.sc = new Scanner(System.in);
-        this.data = HraData.loadGameDataFromResources("/gamedata.json");
-        this.hrac = data.getPostavy().getFirst();
-        this.prikazy = new HashMap<>();
-        this.postavy = data.getPostavy().toArray(new Entita[0]);
-        this.itemy = data.getItems();
+
     }
 
     /**
      * Metoda ktera naplni vsechny ArrayListy/pole ve hre
      */
     private void setListy(){
-        hrac.setInventar(itemy);
-        hrac.setIdAktualniLokace(data.getLokace());
+        this.sc = new Scanner(System.in);
+        this.data = HraData.loadGameDataFromResources("/gamedata.json");
+        this.prikazy = new HashMap<>();
+        this.postavy = data.getPostavy().toArray(new Entita[0]);
+        this.itemy = data.getItems();
         for (int i = 0; i < data.getLokace().size(); i++) {
             data.getLokace().get(i).setVychody(data.getLokace());
             data.getLokace().get(i).setItemyVLokaci(itemy);
         }
+        for (int i = 0; i < data.getPostavy().size(); i++) {
+            data.getPostavy().get(i).setInventar(itemy);
+            data.getPostavy().get(i).setIdAktualniLokace(data.getLokace());
+        }
+        this.hrac = data.getPostavy().getFirst();
     }
 
     /**
@@ -53,8 +56,8 @@ public class Hra {
         prikazy.put("help", new Pomoc());
         prikazy.put("quit", new Quit());
         prikazy.put("ls -q", new Ukoly());
-        prikazy.put("kill", new Boj(1, hrac, postavy[3]));
-        prikazy.put("exit", new Boj(2, hrac, postavy[3]));
+        prikazy.put("kill", new Boj(1, hrac, postavy[3], data.getLokace()));
+        prikazy.put("exit", new Boj(2, hrac, postavy[3], data.getLokace()));
         prikazy.put("run", new PouzijPredmet(1, hrac, itemy));
         prikazy.put("cat -i", new PouzijPredmet(2, hrac, itemy));
         prikazy.put("get", new VezmiPredmet(1, hrac, itemy));
