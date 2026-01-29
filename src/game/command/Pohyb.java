@@ -48,7 +48,7 @@ public class Pohyb implements Command{
         }else {
             if (obsahuje(text) == 2){
                 hrac.setIdLokace(text);
-                return "Lokace zmenena na: " + text;
+                return "Lokace zmenena na: " + text + "\n" +  hrac.getAktualniLokace().getPopis();
             } else if (obsahuje(text) == 1) {
                 return "Do teto mistnosti nemuzes jit z tve aktualni mistonsti";
             } else {
