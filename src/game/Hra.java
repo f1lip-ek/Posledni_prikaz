@@ -80,17 +80,17 @@ public class Hra {
         //System.out.println(Arrays.toString(textovePole));
 
         if (prikazy.containsKey(textovePole[0]) && textovePole.length == 1) {
-            System.out.println(">> " + prikazy.get(textovePole[0]).execute(textovePole[0]));
+            System.out.println("\n" + prikazy.get(textovePole[0]).execute(textovePole[0]));
             konecHry = prikazy.get(textovePole[0]).exit();
         } else if (prikazy.containsKey(textovePole[0]) && textovePole.length != 1) {
             for (int i = 2; i < textovePole.length; i++) {
                 pole[1] += " " + textovePole[i];
             }
-            System.out.println(">> " + prikazy.get(textovePole[0]).execute(textovePole[1]));
+            System.out.println("\n" + prikazy.get(textovePole[0]).execute(textovePole[1]));
             konecHry = prikazy.get(textovePole[0]).exit();
             hrac.setIdAktualniLokace(data.getLokace());
         } else {
-            System.out.println(">> Zkus command help pro vypsani vsech commandu");
+            System.out.println("\nZkus command help pro vypsani vsech commandu");
         }
     }
 

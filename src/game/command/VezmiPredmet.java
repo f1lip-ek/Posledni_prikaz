@@ -43,7 +43,7 @@ public class VezmiPredmet implements Command{
                 return "Item neexistuje";
             }
         }else {
-            return "Itemy v lokaci" + hrac.getAktualniLokace().getItemyVLokaci().toString();
+            return hrac.getAktualniLokace().getPopis() + "\n" + "Itemy v lokaci :" + hrac.getAktualniLokace().getItemyVLokaci().toString();
         }
     }
 

@@ -50,7 +50,7 @@
     {
       "id" : "ulice",
       "nazev" : "Opustena ulice",
-      "popis" : "",
+      "popis" : "Temna opustena ulice v jeste tajemnejsi Praze",
       "idVychodu" : ["byt", "recepce"],
       "items" : [],
       "porazenyGolias" : false,
@@ -59,7 +59,7 @@
     {
       "id" : "recepce",
       "nazev" : "Recepce NeuroNetu",
-      "popis" : "",
+      "popis" : "Sedi zde pochmurna a protivna recepcni firmy NeuroNet",
       "idVychodu" : ["ulice", "chodba"],
       "items" : ["kamera"],
       "porazenyGolias" : null,
@@ -68,7 +68,7 @@
     {
       "id" : "chodba",
       "nazev" : "Chodba v NeuroNet",
-      "popis" : "",
+      "popis" : "Tajemna chodba v jeste tajemnejsi firme NeuroNet",
       "idVychodu" : ["recepce", "rozvodna", "lab", "terminal", "serverovna"],
       "items" : [],
       "porazenyGolias" : null,
@@ -77,7 +77,7 @@
     {
       "id" : "rozvodna",
       "nazev" : "Hlavni rozvodna elektriny",
-      "popis" : "",
+      "popis" : "Je zde prepinac energie ke zbranim",
       "idVychodu" : ["chodba"],
       "items" : [],
       "porazenyGolias" : null,
@@ -86,7 +86,7 @@
     {
       "id" : "lab",
       "nazev" : "Testovaci laborator",
-      "popis" : "",
+      "popis" : "Nachazeji se zde testovaci subjekty projektu Matrix.",
       "idVychodu" : ["chodba"],
       "items" : [],
       "porazenyGolias" : null,
@@ -95,7 +95,7 @@
     {
       "id" : "terminal",
       "nazev" : "Terminal Alfa",
-      "popis" : "",
+      "popis" : "Tajemna mistnost kde se nachazi monitor od serveru kde se nachazi terminal serveru. Hrac zde musi vykonat dulezitou volbu mezi zabitim lidstva nebo zrazenim NeuroNetu.",
       "idVychodu" : ["chodba"],
       "items" : [],
       "porazenyGolias" : null,
@@ -104,7 +104,7 @@
     {
       "id" : "serverovna",
       "nazev" : "Karluv byt",
-      "popis" : "",
+      "popis" : "Hlavni server od celeho Cognitive AI v9.",
       "idVychodu" : ["chodba"],
       "items" : [],
       "porazenyGolias" : null,
