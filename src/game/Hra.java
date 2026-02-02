@@ -1,6 +1,7 @@
 package game;
 
 import game.command.*;
+import game.dialog.Dialog;
 import game.itemy.Item;
 import game.postavy.Entita;
 
@@ -21,6 +22,7 @@ public class Hra {
     private Scanner sc;
     private HraData data;
     private ArrayList<Item> itemy;
+    private Dialog dialogy;
 
     /**
      * Metoda ktera inicializuje vsechny vlastnosti tridy Hra
@@ -47,6 +49,7 @@ public class Hra {
             data.getPostavy().get(i).setIdAktualniLokace(data.getLokace());
         }
         this.hrac = data.getPostavy().getFirst();
+        this.dialogy = new Dialog();
     }
 
     /**
