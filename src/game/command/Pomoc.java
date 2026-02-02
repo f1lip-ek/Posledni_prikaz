@@ -22,12 +22,9 @@ public class Pomoc implements Command{
         try (Reader reader = new FileReader("resources/pomoc.json")) {
             String[] pomoc = gson.fromJson(reader, String[].class);
             return Arrays.toString(pomoc);
-        } catch (FileNotFoundException ex){
-            System.err.println(ex.getMessage());
         } catch (Exception e) {
             throw new RuntimeException("Chyba při načítání JSON: " + e.getMessage());
         }
-        return null;
     }
 
     /**

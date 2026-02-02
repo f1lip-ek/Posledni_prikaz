@@ -15,12 +15,9 @@ public class Ukoly implements Command{
         try (Reader reader = new FileReader("resources/ukoly.json")) {
             String[] pomoc = gson.fromJson(reader, String[].class);
             return Arrays.toString(pomoc);
-        } catch (FileNotFoundException ex){
-            System.err.println(ex.getMessage());
-        } catch (Exception e) {
+        }catch (Exception e) {
             throw new RuntimeException("Chyba při načítání JSON: " + e.getMessage());
         }
-        return null;
     }
 
     @Override
