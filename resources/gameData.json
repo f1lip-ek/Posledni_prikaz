@@ -33,8 +33,18 @@
       "popis" : "Kamen na hazeni",
       "poskozeni" : 25,
       "jeAktivni" : null,
-      "obsahujeVirus" : true,
+      "obsahujeVirus" : false,
       "akce" : "Bum"
+    },
+    {
+      "id" : "server",
+      "jmeno" : "Pocitac v serverovne",
+      "popis" : "",
+      "poskozeni" : null,
+      "jeAktivni" : true,
+      "obsahujeVirus" : false,
+      "zkontrolovan" : false,
+      "akce" : ""
     }
   ],
   "lokace" : [
@@ -43,72 +53,56 @@
       "nazev" : "Karluv byt",
       "popis" : "Obycejny nudny byt programatora Karla pracujici pro spolecnost NeuroNet",
       "idVychodu" : ["ulice"],
-      "items" : ["pistole", "usb"],
-      "porazenyGolias" : null,
-      "kontrolaServeru" : null
+      "items" : ["pistole"]
     },
     {
       "id" : "ulice",
       "nazev" : "Opustena ulice",
       "popis" : "Temna opustena ulice v jeste tajemnejsi Praze",
       "idVychodu" : ["byt", "recepce"],
-      "items" : [],
-      "porazenyGolias" : false,
-      "kontrolaServeru" : null
+      "items" : []
     },
     {
       "id" : "recepce",
       "nazev" : "Recepce NeuroNetu",
       "popis" : "Sedi zde pochmurna a protivna recepcni firmy NeuroNet",
       "idVychodu" : ["ulice", "chodba"],
-      "items" : ["kamera"],
-      "porazenyGolias" : null,
-      "kontrolaServeru" : null
+      "items" : ["kamera"]
     },
     {
       "id" : "chodba",
       "nazev" : "Chodba v NeuroNet",
       "popis" : "Tajemna chodba v jeste tajemnejsi firme NeuroNet",
       "idVychodu" : ["recepce", "rozvodna", "lab", "terminal", "serverovna"],
-      "items" : [],
-      "porazenyGolias" : null,
-      "kontrolaServeru" : null
+      "items" : []
     },
     {
       "id" : "rozvodna",
       "nazev" : "Hlavni rozvodna elektriny",
       "popis" : "Je zde prepinac energie ke zbranim",
       "idVychodu" : ["chodba"],
-      "items" : [],
-      "porazenyGolias" : null,
-      "kontrolaServeru" : null
+      "items" : []
     },
     {
       "id" : "lab",
       "nazev" : "Testovaci laborator",
       "popis" : "Nachazeji se zde testovaci subjekty projektu Matrix.",
       "idVychodu" : ["chodba"],
-      "items" : [],
-      "porazenyGolias" : null,
-      "kontrolaServeru" : null
+      "items" : []
     },
     {
       "id" : "terminal",
       "nazev" : "Terminal Alfa",
       "popis" : "Tajemna mistnost kde se nachazi monitor od serveru kde se nachazi terminal serveru. Hrac zde musi vykonat dulezitou volbu mezi zabitim lidstva nebo zrazenim NeuroNetu.",
       "idVychodu" : ["chodba"],
-      "items" : [],
-      "porazenyGolias" : null,
-      "kontrolaServeru" : null
+      "items" : []
     },
     {
       "id" : "serverovna",
       "nazev" : "Karluv byt",
       "popis" : "Hlavni server od celeho Cognitive AI v9.",
       "idVychodu" : ["chodba"],
-      "items" : [],
-      "porazenyGolias" : null,
-      "kontrolaServeru" : false
+      "items" : ["server"]
     }
   ],
   "postavy" : [
@@ -118,7 +112,8 @@
       "zivoty" : 50,
       "jeNepratelska" : false,
       "idAktualniLokace" : "byt",
-      "dialogy" : [],
+      "porazenyGolias" : false,
+      "kontrolaServeru" : false,
       "idItemu" : [],
       "MAX_NOSNOST" : 2
     },
@@ -128,7 +123,6 @@
       "zivoty" : 2147483647,
       "jeNepratelska" : true,
       "idAktualniLokace" : "",
-      "dialogy" : [],
       "idItemu" : [],
       "MAX_NOSNOST" : null
     },
@@ -138,7 +132,6 @@
       "zivoty" : 2147483647,
       "jeNepratelska" : false,
       "idAktualniLokace" : "",
-      "dialogy" : [],
       "idItemu" : [],
       "MAX_NOSNOST" : null
     },
@@ -148,7 +141,6 @@
       "zivoty" : 25,
       "jeNepratelska" : true,
       "idAktualniLokace" : "ulice",
-      "dialogy" : [],
       "idItemu" : ["kamen", "kamen"],
       "MAX_NOSNOST" : 2
     }
