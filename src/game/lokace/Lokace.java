@@ -15,8 +15,6 @@ public class Lokace {
     private ArrayList<Lokace> vychody;
     private ArrayList<String> items;
     private ArrayList<Item> itemyVLokaci;
-    private boolean porazenyGolias;
-    private boolean kontrolaServeru;
 
     public Lokace() {
         this.itemyVLokaci = new ArrayList<>();
@@ -46,14 +44,6 @@ public class Lokace {
 
     public ArrayList<String> getItems() {
         return items;
-    }
-
-    public boolean isPorazenyGolias() {
-        return porazenyGolias;
-    }
-
-    public boolean isKontrolaServeru() {
-        return kontrolaServeru;
     }
 
     public Item odebratItem(Item item){
@@ -95,10 +85,14 @@ public class Lokace {
 
     @Override
     public String toString() {
-        return "Lokace{" +
-                "id='" + id + '\'' +
-                ", nazev='" + nazev + '\'' +
-                ", popis='" + popis + '\'' +
-                "}";
+        return getMinus() + "\nid: " + this.id + "\n" + "nazev mistnosti: " + this.nazev + "\n" + "popis: " + this.popis + "\n" + getMinus();
+    }
+
+    public String getMinus(){
+        String text = "";
+        for (int i = 0; i < this.popis.length() + 5; i++) {
+            text += "-";
+        }
+        return text;
     }
 }
