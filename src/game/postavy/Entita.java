@@ -4,7 +4,6 @@ import game.itemy.Item;
 import game.lokace.Lokace;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Trida ktera slouzi jako sablona ke vsem postavam
@@ -18,8 +17,9 @@ public class Entita {
     private Lokace aktualniLokace;
     private int zivoty;
     private boolean jeNepratelska;
-    private String[] dialogy;
     private ArrayList<String> idItemu;
+    private boolean porazenyGolias;
+    private boolean kontrolaServeru;
     private ArrayList<Item> inventar;
     private int MAX_NOSNOST;
 
@@ -55,10 +55,6 @@ public class Entita {
 
     public boolean isJeNepratelska() {
         return jeNepratelska;
-    }
-
-    public String[] getDialogy() {
-        return dialogy;
     }
 
     public ArrayList<String> getIdItemu() {
@@ -109,7 +105,6 @@ public class Entita {
                 ", idAktualniLokace='" + idAktualniLokace + '\'' +
                 ", zivoty=" + zivoty +
                 ", jeNepratelska=" + jeNepratelska +
-                ", dialogy=" + Arrays.toString(dialogy) +
                 ", idItemu=" + idItemu +
                 ", inventar=" + inventar +
                 ", MAX_NOSNOST=" + MAX_NOSNOST +

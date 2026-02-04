@@ -12,6 +12,7 @@ public class Item {
     private int poskozeni;
     private boolean jeAktivni;
     private boolean obsahujeVirus;
+    private boolean zkontrolovan;
     private String akce;
 
     public Item(String jmeno, String popis) {
