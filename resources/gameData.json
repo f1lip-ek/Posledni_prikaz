@@ -114,6 +114,7 @@
       "idAktualniLokace" : "byt",
       "porazenyGolias" : false,
       "kontrolaServeru" : false,
+      "vymazaneChyby" : false,
       "idItemu" : [],
       "MAX_NOSNOST" : 2
     },

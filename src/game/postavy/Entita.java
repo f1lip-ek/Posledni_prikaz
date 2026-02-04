@@ -20,6 +20,7 @@ public class Entita {
     private ArrayList<String> idItemu;
     private boolean porazenyGolias;
     private boolean kontrolaServeru;
+    private boolean vymazaneChyby;
     private ArrayList<Item> inventar;
     private int MAX_NOSNOST;
 
@@ -67,6 +68,30 @@ public class Entita {
 
     public int getMAX_NOSNOST() {
         return MAX_NOSNOST;
+    }
+
+    public boolean isPorazenyGolias() {
+        return porazenyGolias;
+    }
+
+    public boolean isKontrolaServeru() {
+        return kontrolaServeru;
+    }
+
+    public boolean isVymazaneChyby() {
+        return vymazaneChyby;
+    }
+
+    public void setPorazenyGolias(boolean porazenyGolias) {
+        this.porazenyGolias = porazenyGolias;
+    }
+
+    public void setKontrolaServeru(boolean kontrolaServeru) {
+        this.kontrolaServeru = kontrolaServeru;
+    }
+
+    public void setVymazaneChyby(boolean vymazaneChyby) {
+        this.vymazaneChyby = vymazaneChyby;
     }
 
     /**
