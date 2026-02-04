@@ -28,18 +28,24 @@ public class VezmiPredmet implements Command{
     @Override
     public String execute(String text) {
         if (cislo == 1){
-            if (getItem(text) != null) {
-                if (hrac.getInventar().size() + 1 <= hrac.getMAX_NOSNOST()) {
-                    if (!hrac.getInventar().contains(getItem(text))) {
-                        hrac.getInventar().add(getItem(text));
-                        return "Pridano do inventare -> " + hrac.getInventar().toString();
+            if (getItem(text) != null && hrac.getAktualniLokace().getItemyVLokaci().contains(getItem(text))) {
+                if (!text.equals("server")){
+                    if (hrac.getInventar().size() + 1 <= hrac.getMAX_NOSNOST()) {
+                        if (!hrac.getInventar().contains(getItem(text))) {
+                            hrac.getInventar().add(getItem(text));
+                            return "Pridano do inventare -> " + hrac.getInventar().toString();
+                        } else {
+                            return "Uz to mas v inventari";
+                        }
                     } else {
-                        return "Uz to mas v inventari";
+                        return "Nemuzes pridat mas plny inventar";
                     }
-                } else {
-                    return "Nemuzes pridat mas plny inventar";
+                }else {
+                    return "Nemuzes sebrat server, ale muzes ho pouzit";
                 }
-            }else {
+            } else if (getItem(text) != null && !hrac.getAktualniLokace().getItemyVLokaci().contains(getItem(text))) {
+                return "Item neni v tve aktualni lokaci";
+            } else {
                 return "Item neexistuje";
             }
         }else {
