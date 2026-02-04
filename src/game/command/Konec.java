@@ -6,7 +6,7 @@ import game.postavy.Entita;
 
 import java.util.ArrayList;
 
-public class Ending implements Command{
+public class Konec implements Command{
 
     private boolean konec = false;
     private int cislo;
@@ -14,7 +14,7 @@ public class Ending implements Command{
     private final Dialog dialogy;
     private final ArrayList<Item> itemy;
 
-    public Ending(int cislo, Entita hrac, Dialog dialogy, ArrayList<Item> itemy) {
+    public Konec(int cislo, Entita hrac, Dialog dialogy, ArrayList<Item> itemy) {
         this.cislo = cislo;
         this.hrac = hrac;
         this.dialogy = dialogy;
