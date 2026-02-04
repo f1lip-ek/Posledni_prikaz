@@ -28,6 +28,7 @@ public class Boj implements Command{
         if (cislo == 1){
             if (hrac.getInventar().stream().anyMatch(item -> item.getId().equals("pistole")) || hrac.getInventar().stream().anyMatch(item -> item.getId().equals("kamen"))){
                 vyprazdnitInventarProtivnika();
+                hrac.setPorazenyGolias(true);
                 return "Porazil jsi: " + protivnik.getJmeno();
             }else {
                 hrac.setZivoty(0);
