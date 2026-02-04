@@ -1,6 +1,6 @@
 [
   "ls -c",
-  "cd /<misto>",
+  "cd <misto>",
 
   "get <predmet>",
   "ls -p",
@@ -12,6 +12,9 @@
   "exit",
 
   "ls -q",
+
+  "start",
+  "upload",
 
   "help"
 ]
