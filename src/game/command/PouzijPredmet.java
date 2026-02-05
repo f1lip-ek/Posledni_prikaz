@@ -1,6 +1,8 @@
 package game.command;
 
+import game.dialog.Dialog;
 import game.itemy.Item;
+import game.lokace.Lokace;
 import game.postavy.Entita;
 
 import java.util.ArrayList;
@@ -10,11 +12,16 @@ public class PouzijPredmet implements Command{
     private int cislo;
     private Entita hrac;
     private ArrayList<Item> itemy;
+    private Dialog dialogy;
+    private ArrayList<Lokace> lokace;
 
-    public PouzijPredmet(int cislo, Entita hrac, ArrayList<Item> itemy) {
+
+    public PouzijPredmet(int cislo, Entita hrac, ArrayList<Item> itemy, Dialog dialogy, ArrayList<Lokace> lokace) {
         this.cislo = cislo;
         this.hrac = hrac;
         this.itemy = itemy;
+        this.dialogy = dialogy;
+        this.lokace = lokace;
     }
 
     @Override
@@ -26,16 +33,33 @@ public class PouzijPredmet implements Command{
                         if (hrac.getAktualniLokace().getId().equals("ulice")){
                             hrac.getAktualniLokace().getItemyVLokaci().add(getItem(text));
                             hrac.getInventar().remove(getItem(text));
-                            yield hrac.getAktualniLokace().getItemyVLokaci().toString() + "penis";
+                            yield getItem(text).getPopis();
                         }else {
-                            yield "Nejsi na spravnem miste kde se ";
+                            yield "Nejsi na spravnem miste kde se to muze pouzit";
                         }
                     }else {
                         yield "Nemas takovy predmet";
                     }
                 }
-                case "usb" -> "";
-                case "pistole", "kamen" -> "Nejsi v boji.";
+                case "usb" -> {
+                    if (hrac.getInventar().contains(getItem(text)) && hrac.getAktualniLokace().getId().equals("terminal")){
+                        if (hrac.isKontrolaServeru() && hrac.isVymazaneChyby()) {
+                            yield "Zadej \u001B[31m start\u001B[0m nebo\u001B[31m upload\u001B[0m ";
+                        }else {
+                            yield "Musis jeste neco udelat";
+                        }
+                    }
+                    yield "Nejsi na spravnem miste kde se to muze pouzit";
+                }
+                case "pistole", "kamen" -> "Co bys jako chtel udelat?\nZastrelit sam sebe nebo se prastit kamenem do hlavy?";
+                case "server" -> {
+                    if (hrac.getAktualniLokace().getId().equals("serverovna")){
+                        hrac.setKontrolaServeru(true);
+                        yield hrac.getAktualniLokace().getItemyVLokaci().getFirst().getPopis();
+                    } else {
+                        yield "Nejde pouzit. Nejsi ve spravne mistnosti.";
+                    }
+                }
                 default -> "Nemas takovy predmet";
             };
         }else {
