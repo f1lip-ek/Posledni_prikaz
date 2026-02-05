@@ -1,5 +1,6 @@
 package game.command;
 
+import game.itemy.Item;
 import game.lokace.Lokace;
 import game.postavy.Entita;
 
@@ -13,11 +14,13 @@ public class Pohyb implements Command{
     private final int cislo;
     private final Entita hrac;
     private final ArrayList<Lokace> vsechnyLokace;
+    private final Item item;
 
-    public Pohyb(int cislo, Entita hrac, ArrayList<Lokace> vsechnyLokace) {
+    public Pohyb(int cislo, Entita hrac, ArrayList<Lokace> vsechnyLokace, Item item) {
         this.cislo = cislo;
         this.hrac = hrac;
         this.vsechnyLokace = vsechnyLokace;
+        this.item = item;
     }
 
     /**
@@ -48,7 +51,13 @@ public class Pohyb implements Command{
         }else {
             if (obsahuje(text) == 2){
                 if (text.equals("chodba") && !hrac.isPorazenyGolias()){
-                    return "Do teto mistnosti ted nemuzes jit. Musis jeste udelat";
+                    return "Do teto mistnosti ted nemuzes jit. Musis jeste neco udelat";
+                }
+                if (text.equals("chodba") && hrac.isKontrolaServeru() && hrac.isVymazaneChyby()){
+                    vsechnyLokace.getFirst().getItemyVLokaci().add(item);
+                }
+                if (text.equals("terminal") && !hrac.isKontrolaServeru() && !hrac.isVymazaneChyby()){
+                    return "Do teto mistnosti ted nemuzes jit. Musis jeste neco udelat";
                 }
                 hrac.setIdLokace(text);
                 hrac.setIdAktualniLokace(vsechnyLokace);
