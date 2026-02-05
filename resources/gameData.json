@@ -115,6 +115,7 @@
       "porazenyGolias" : false,
       "kontrolaServeru" : false,
       "vymazaneChyby" : false,
+      "rozhodnuti" : false,
       "idItemu" : [],
       "MAX_NOSNOST" : 2,
       "cisloUkolu" : 0
