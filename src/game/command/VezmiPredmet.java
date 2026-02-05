@@ -1,5 +1,6 @@
 package game.command;
 
+import game.dialog.Dialog;
 import game.itemy.Item;
 import game.postavy.Entita;
 
@@ -13,11 +14,13 @@ public class VezmiPredmet implements Command{
     private int cislo;
     private Entita hrac;
     private ArrayList<Item> itemy;
+    private Dialog dialogy;
 
-    public VezmiPredmet(int cislo, Entita hrac, ArrayList<Item> itemy) {
+    public VezmiPredmet(int cislo, Entita hrac, ArrayList<Item> itemy, Dialog dialog) {
         this.cislo = cislo;
         this.hrac = hrac;
         this.itemy = itemy;
+        this.dialogy = dialog;
     }
 
     /**
@@ -49,6 +52,10 @@ public class VezmiPredmet implements Command{
                 return "Item neexistuje";
             }
         }else {
+            if (hrac.getAktualniLokace().getId().equals("lab")){
+                hrac.setVymazaneChyby(true);
+                return "Vymazany chyby" /*dialogy.getDialog(0, "")*/;
+            }
             return "Itemy v lokaci :" + hrac.getAktualniLokace().getItemyVLokaci().toString();
         }
     }
