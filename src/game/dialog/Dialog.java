@@ -24,13 +24,8 @@ public class Dialog {
         }
     }
 
-    public String getDialog(int cislo){
-        String text = "";
-        for (int i = aktualniIndex; i < aktualniIndex + cislo; i++) {
-            text += textyDoKonzole.get(i) + "\n";
-        }
-        aktualniIndex += cislo;
-        return text;
+    public String getDialog(int cislo, String text){
+        return textyDoKonzole.get(cislo) + "\n";
     }
 
 }
