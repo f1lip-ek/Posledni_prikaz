@@ -22,6 +22,7 @@ public class Entita {
     private boolean kontrolaServeru;
     private boolean vymazaneChyby;
     private ArrayList<Item> inventar;
+    private int cisloUkolu;
     private int MAX_NOSNOST;
 
     public Entita() {}
@@ -82,6 +83,10 @@ public class Entita {
         return vymazaneChyby;
     }
 
+    public int getCisloUkolu() {
+        return cisloUkolu;
+    }
+
     public void setPorazenyGolias(boolean porazenyGolias) {
         this.porazenyGolias = porazenyGolias;
     }
@@ -92,6 +97,10 @@ public class Entita {
 
     public void setVymazaneChyby(boolean vymazaneChyby) {
         this.vymazaneChyby = vymazaneChyby;
+    }
+
+    public void zvecitCisloUkolu() {
+        this.cisloUkolu++;
     }
 
     /**
