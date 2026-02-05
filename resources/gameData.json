@@ -39,7 +39,7 @@
     {
       "id" : "server",
       "jmeno" : "Pocitac v serverovne",
-      "popis" : "",
+      "popis" : "Pripraven na upload finalniho patche",
       "poskozeni" : null,
       "jeAktivni" : true,
       "obsahujeVirus" : false,
@@ -116,7 +116,8 @@
       "kontrolaServeru" : false,
       "vymazaneChyby" : false,
       "idItemu" : [],
-      "MAX_NOSNOST" : 2
+      "MAX_NOSNOST" : 2,
+      "cisloUkolu" : 0
     },
     {
       "id" : "ai",
