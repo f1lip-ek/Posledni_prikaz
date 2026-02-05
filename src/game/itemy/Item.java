@@ -50,14 +50,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
-                "id='" + id + '\'' +
-                ", jmeno='" + jmeno + '\'' +
-                ", popis='" + popis + '\'' +
-                ", poskozeni=" + poskozeni +
-                ", jeAktivni=" + jeAktivni +
-                ", obsahujeVirus=" + obsahujeVirus +
-                ", akce='" + akce + '\'' +
-                '}';
+        return "\nid: " + this.id + "\n" + "nazev: " + this.jmeno + "\n" + "popis: " + this.popis + "\n";
     }
 }
