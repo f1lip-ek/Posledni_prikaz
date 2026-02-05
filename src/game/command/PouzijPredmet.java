@@ -33,7 +33,22 @@ public class PouzijPredmet implements Command{
                         if (hrac.getAktualniLokace().getId().equals("ulice")){
                             hrac.getAktualniLokace().getItemyVLokaci().add(getItem(text));
                             hrac.getInventar().remove(getItem(text));
-                            yield getItem(text).getPopis();
+                            hrac.setKamera(true);
+                            try{
+                                System.out.print(dialogy.getDialog(5, ""));
+                                Thread.sleep(500);
+                                System.out.print(dialogy.getDialog(6, ""));
+                                Thread.sleep(500);
+                                System.out.print(dialogy.getDialog(9, ""));
+                                Thread.sleep(500);
+                                System.out.print(dialogy.getDialog(11, ""));
+                                Thread.sleep(500);
+                                System.out.print(dialogy.getDialog(14, ""));
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                System.out.println(e.getMessage());
+                            }
+                            yield dialogy.getDialog(15, "") + dialogy.getDialog(16, "");
                         }else {
                             yield "Nejsi na spravnem miste kde se to muze pouzit";
                         }
@@ -43,7 +58,7 @@ public class PouzijPredmet implements Command{
                 }
                 case "usb" -> {
                     if (hrac.getInventar().contains(getItem(text)) && hrac.getAktualniLokace().getId().equals("terminal")){
-                        if (hrac.isKontrolaServeru() && hrac.isVymazaneChyby()) {
+                        if (hrac.isKontrolaServeru() && hrac.isVymazaneChyby() && hrac.isRozhodnutiEl()) {
                             yield "Zadej \u001B[31m start\u001B[0m nebo\u001B[31m upload\u001B[0m ";
                         }else {
                             yield "Musis jeste neco udelat";

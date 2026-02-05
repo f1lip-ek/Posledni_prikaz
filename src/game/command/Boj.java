@@ -1,10 +1,10 @@
 package game.command;
 
+import game.dialog.Dialog;
 import game.lokace.Lokace;
 import game.postavy.Entita;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Boj implements Command{
 
@@ -12,25 +12,29 @@ public class Boj implements Command{
     private Entita hrac;
     private Entita protivnik;
     private ArrayList<Lokace> lokace;
-    private Random rd;
+    private Dialog dialog;
     private boolean ukonceno = false;
 
-    public Boj(int cislo, Entita hrac, Entita protivnik, ArrayList<Lokace> lokace) {
+    public Boj(int cislo, Entita hrac, Entita protivnik, ArrayList<Lokace> lokace, Dialog dialog) {
         this.cislo = cislo;
         this.hrac = hrac;
         this.protivnik = protivnik;
         this.lokace = lokace;
-        this.rd = new Random();
+        this.dialog = dialog;
     }
 
     @Override
     public String execute(String text) {
         if (cislo == 1){
-            if (hrac.getInventar().stream().anyMatch(item -> item.getId().equals("pistole")) || hrac.getInventar().stream().anyMatch(item -> item.getId().equals("kamen"))){
+            if ((hrac.getInventar().stream().anyMatch(item -> item.getId().equals("pistole")) || hrac.getInventar().stream().anyMatch(item -> item.getId().equals("kamen")) )
+                    && hrac.isKamera()){
                 vyprazdnitInventarProtivnika();
                 hrac.setPorazenyGolias(true);
-                return "Porazil jsi: " + protivnik.getJmeno();
-            }else {
+                return dialog.getDialog(18, "") + "Porazil jsi: " + protivnik.getJmeno() + "\n" + dialog.getDialog(19, "");
+            } else if ((hrac.getInventar().stream().anyMatch(item -> item.getId().equals("pistole")) || hrac.getInventar().stream().anyMatch(item -> item.getId().equals("kamen")) )
+                    && !hrac.isKamera()) {
+                return "Neni koho zabit";
+            } else {
                 hrac.setZivoty(0);
                 ukonceno = true;
                 return "nemas zadne zbrane, zabil te: " + protivnik.getJmeno();

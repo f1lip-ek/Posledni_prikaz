@@ -61,8 +61,8 @@ public class Hra {
         prikazy.put("help", new Pomoc());
         prikazy.put("quit", new Quit());
         prikazy.put("ls -q", new Ukoly(hrac));
-        prikazy.put("kill", new Boj(1, hrac, postavy[3], data.getLokace()));
-        prikazy.put("exit", new Boj(2, hrac, postavy[3], data.getLokace()));
+        prikazy.put("kill", new Boj(1, hrac, postavy[3], data.getLokace(), dialogy));
+        prikazy.put("exit", new Boj(2, hrac, postavy[3], data.getLokace(), dialogy));
         prikazy.put("run", new PouzijPredmet(1, hrac, itemy, dialogy, data.getLokace()));
         prikazy.put("cat -i", new PouzijPredmet(2, hrac, itemy, dialogy, data.getLokace()));
         prikazy.put("get", new VezmiPredmet(1, hrac, itemy, dialogy));

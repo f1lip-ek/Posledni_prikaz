@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class Konec implements Command{
 
-    private boolean konec = false;
     private int cislo;
     private final Entita hrac;
     private final Dialog dialogy;
@@ -25,10 +24,14 @@ public class Konec implements Command{
     public String execute(String text) {
         if (cislo == 1 && hrac.getAktualniLokace().getId().equals("terminal")){
             /*start*/
-            return "";
+            if (hrac.getInventar().contains(getItem("usb"))){
+                return dialogy.getDialog(29, "");
+            }else{
+                return "Nemas usb";
+            }
         }else if (cislo == 2 && hrac.getAktualniLokace().getId().equals("terminal") && hrac.getInventar().contains(getItem("usb"))) {
             /*upload*/
-            return "";
+            return dialogy.getDialog(30, "");
         } else {
             return "Nemuzes pouzit protoze nejsi ve spravne mistnosti";
         }
@@ -36,7 +39,7 @@ public class Konec implements Command{
 
     @Override
     public boolean exit() {
-        return konec;
+        return true;
     }
 
     public Item getItem(String text){

@@ -53,15 +53,15 @@ public class Pohyb implements Command{
                 if (text.equals("chodba") && !hrac.isPorazenyGolias()){
                     return "Do teto mistnosti ted nemuzes jit. Musis jeste neco udelat";
                 }
-                if (text.equals("chodba") && hrac.isKontrolaServeru() && hrac.isVymazaneChyby()){
+                if (text.equals("chodba") && hrac.isRozhodnutiEl()){
                     vsechnyLokace.getFirst().getItemyVLokaci().add(item);
                 }
-                if (text.equals("terminal") && !hrac.isKontrolaServeru() && !hrac.isVymazaneChyby()){
+                if (text.equals("terminal") && !hrac.isKontrolaServeru() && !hrac.isVymazaneChyby() && !hrac.isRozhodnutiEl()){
                     return "Do teto mistnosti ted nemuzes jit. Musis jeste neco udelat";
                 }
                 hrac.setIdLokace(text);
                 hrac.setIdAktualniLokace(vsechnyLokace);
-                return "Lokace zmenena na: " + text + "\n" +  hrac.getAktualniLokace().getPopis();
+                return "Lokace zmenena na: " + hrac.getAktualniLokace().getNazev() + "\n" +  hrac.getAktualniLokace().getPopis();
             } else if (obsahuje(text) == 1) {
                 return "Do teto mistnosti nemuzes jit z tve aktualni mistonsti";
             } else {
