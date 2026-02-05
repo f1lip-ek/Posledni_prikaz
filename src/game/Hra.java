@@ -23,6 +23,7 @@ public class Hra {
     private HraData data;
     private ArrayList<Item> itemy;
     private Dialog dialogy;
+    private StartHry startHry;
 
     /**
      * Metoda ktera inicializuje vsechny vlastnosti tridy Hra
@@ -50,6 +51,7 @@ public class Hra {
         }
         this.hrac = data.getPostavy().getFirst();
         this.dialogy = new Dialog();
+        this.startHry = new StartHry(dialogy);
     }
 
     /**
@@ -58,15 +60,15 @@ public class Hra {
     private void inicializaceCommandu(){
         prikazy.put("help", new Pomoc());
         prikazy.put("quit", new Quit());
-        prikazy.put("ls -q", new Ukoly());
+        prikazy.put("ls -q", new Ukoly(hrac));
         prikazy.put("kill", new Boj(1, hrac, postavy[3], data.getLokace()));
         prikazy.put("exit", new Boj(2, hrac, postavy[3], data.getLokace()));
-        prikazy.put("run", new PouzijPredmet(1, hrac, itemy, dialogy));
-        prikazy.put("cat -i", new PouzijPredmet(2, hrac, itemy, dialogy));
-        prikazy.put("get", new VezmiPredmet(1, hrac, itemy));
-        prikazy.put("ls -p", new VezmiPredmet(2, hrac, itemy));
-        prikazy.put("ls -c", new Pohyb(1, hrac, data.getLokace()));
-        prikazy.put("cd", new Pohyb(2, hrac, data.getLokace()));
+        prikazy.put("run", new PouzijPredmet(1, hrac, itemy, dialogy, data.getLokace()));
+        prikazy.put("cat -i", new PouzijPredmet(2, hrac, itemy, dialogy, data.getLokace()));
+        prikazy.put("get", new VezmiPredmet(1, hrac, itemy, dialogy));
+        prikazy.put("ls -p", new VezmiPredmet(2, hrac, itemy, dialogy));
+        prikazy.put("ls -c", new Pohyb(1, hrac, data.getLokace(), data.getItems().get(2)));
+        prikazy.put("cd", new Pohyb(2, hrac, data.getLokace(), data.getItems().get(2)));
         prikazy.put("start", new Konec(1, hrac, dialogy, itemy));
         prikazy.put("upload", new Konec(2, hrac, dialogy, itemy));
     }
@@ -131,6 +133,7 @@ public class Hra {
         inicializaceVlastnosti();
         setListy();
         inicializaceCommandu();
+        startHry.start();
         do {
             zpracujPrikaz();
         }while (!konecHry);
