@@ -22,9 +22,11 @@ public class Entita {
     private boolean kontrolaServeru;
     private boolean vymazaneChyby;
     private boolean rozhodnutiEl;
+    private boolean kamera = false;
     private ArrayList<Item> inventar;
     private int cisloUkolu;
     private int MAX_NOSNOST;
+    private int volba;
 
     public Entita() {}
 
@@ -88,6 +90,14 @@ public class Entita {
         return rozhodnutiEl;
     }
 
+    public boolean isKamera() {
+        return kamera;
+    }
+
+    public int getVolba() {
+        return volba;
+    }
+
     public int getCisloUkolu() {
         return cisloUkolu;
     }
@@ -106,6 +116,14 @@ public class Entita {
 
     public void setRozhodnutiEl(boolean rozhodnuti) {
         this.rozhodnutiEl = rozhodnuti;
+    }
+
+    public void setKamera(boolean kamera) {
+        this.kamera = kamera;
+    }
+
+    public void setVolba(int volba) {
+        this.volba = volba;
     }
 
     public void zvecitCisloUkolu() {
