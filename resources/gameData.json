@@ -86,7 +86,7 @@
     {
       "id" : "lab",
       "nazev" : "Testovaci laborator",
-      "popis" : "Nachazeji se zde testovaci subjekty projektu Matrix.",
+      "popis" : "Nachazeji se zde testovaci subjekty projektu NeuroGrid.",
       "idVychodu" : ["chodba"],
       "items" : []
     },
@@ -99,7 +99,7 @@
     },
     {
       "id" : "serverovna",
-      "nazev" : "Karluv byt",
+      "nazev" : "Serverovna NeuroNetu",
       "popis" : "Hlavni server od celeho Cognitive AI v9.",
       "idVychodu" : ["chodba"],
       "items" : ["server"]
@@ -115,7 +115,7 @@
       "porazenyGolias" : false,
       "kontrolaServeru" : false,
       "vymazaneChyby" : false,
-      "rozhodnuti" : false,
+      "rozhodnutiEl" : false,
       "idItemu" : [],
       "MAX_NOSNOST" : 2,
       "cisloUkolu" : 0
