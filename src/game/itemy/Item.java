@@ -20,6 +20,8 @@ public class Item {
         this.popis = popis;
     }
 
+    public Item(){}
+
     public String getJmeno(){
         return jmeno;
     }

@@ -22,6 +22,13 @@ public class Lokace {
         this.idVychodu = new ArrayList<>();
     }
 
+    public Lokace(String id,ArrayList<String> idVychodu) {
+        this.id = id;
+        this.idVychodu = idVychodu;
+        this.vychody = new ArrayList<>();
+        this.itemyVLokaci = new ArrayList<>();
+    }
+
     public String getNazev(){
         return nazev;
     }
