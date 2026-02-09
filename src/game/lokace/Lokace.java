@@ -20,6 +20,7 @@ public class Lokace {
         this.itemyVLokaci = new ArrayList<>();
         this.vychody = new ArrayList<>();
         this.idVychodu = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
     public Lokace(String id,ArrayList<String> idVychodu) {
@@ -27,6 +28,7 @@ public class Lokace {
         this.idVychodu = idVychodu;
         this.vychody = new ArrayList<>();
         this.itemyVLokaci = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
     public String getNazev(){
