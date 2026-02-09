@@ -15,9 +15,9 @@ public class Item {
     private boolean zkontrolovan;
     private String akce;
 
-    public Item(String jmeno, String popis) {
+    public Item(String id, String jmeno) {
+        this.id = id;
         this.jmeno = jmeno;
-        this.popis = popis;
     }
 
     public Item(){}
@@ -48,6 +48,10 @@ public class Item {
 
     public String getAkce() {
         return akce;
+    }
+
+    public void setId(String id){
+        this.id = id;
     }
 
     @Override

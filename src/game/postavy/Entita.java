@@ -30,6 +30,11 @@ public class Entita {
 
     public Entita() {}
 
+    public Entita(String id){
+        this.idItemu = new ArrayList<>();
+
+    }
+
     public String getJmeno(){
         return jmeno;
     }
@@ -153,7 +158,7 @@ public class Entita {
         for (int i = 0; i < vsechnyLokace.size(); i++) {
             if (idAktualniLokace.equals(vsechnyLokace.get(i).getId())){
                 this.aktualniLokace = vsechnyLokace.get(i);
-                return;
+                break;
             }
         }
     }
