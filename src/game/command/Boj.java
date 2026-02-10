@@ -6,6 +6,9 @@ import game.postavy.Entita;
 
 import java.util.ArrayList;
 
+/**
+ * Trida pro command Boj ktery umoznuje hraci bojovat s Goliasem
+ */
 public class Boj implements Command{
 
     private int cislo;
@@ -23,6 +26,11 @@ public class Boj implements Command{
         this.dialog = dialog;
     }
 
+    /**
+     * Metoda pro command ktery bud dovoli hracovi zabit protivnika a nebo se vzdat a umrit
+     * @param text nepouzivan
+     * @return text ktery hrace utvrdi v tom ze budto umrel a nebo zabil protivnika
+     */
     @Override
     public String execute(String text) {
         if (cislo == 1){
@@ -46,7 +54,10 @@ public class Boj implements Command{
         }
     }
 
-    public void vyprazdnitInventarProtivnika(){
+    /**
+     * Metoda na vyprazdeni inventare protivnika do lokace hrace
+     */
+    private void vyprazdnitInventarProtivnika(){
         for (int i = protivnik.getInventar().size() - 1; i >= 0; i--) {
             lokace.get(cisloLokace()).getItemyVLokaci().add(protivnik.getInventar().get(i));
             hrac.getAktualniLokace().getItemyVLokaci().add(protivnik.getInventar().get(i));
@@ -54,6 +65,10 @@ public class Boj implements Command{
         }
     }
 
+    /**
+     * Metoda ktera zjisti v jake lokaci se hrac nachazi
+     * @return index lokace hrace
+     */
     private int cisloLokace(){
         for (int i = 0; i < lokace.size(); i++) {
             if (lokace.get(i).getId().equals(hrac.getAktualniLokace().getId())){
