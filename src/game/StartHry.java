@@ -2,6 +2,9 @@ package game;
 
 import game.dialog.Dialog;
 
+/**
+ * Trida s metodou ktera se spousti na zacatku hry a tak trochu uvede hrace do deje
+ */
 public class StartHry {
 
     private Dialog dialog;
@@ -10,6 +13,9 @@ public class StartHry {
         this.dialog = dialog;
     }
 
+    /**
+     * Vypise prvnich nekolik dialogu na startu hry
+     */
     public void start(){
         try {
             for (int i = 0; i < 3; i++) {
