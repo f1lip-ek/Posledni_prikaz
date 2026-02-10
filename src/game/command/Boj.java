@@ -78,6 +78,10 @@ public class Boj implements Command{
         return 0;
     }
 
+    /**
+     * Metoda ktera rika jestli command ukoncuje hru nebo ne
+     * @return false protoze command neukoncuje hru
+     */
     @Override
     public boolean exit() {
         return ukonceno;
