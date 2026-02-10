@@ -51,7 +51,7 @@ public class Konec implements Command{
 
     /**
      * Metoda ktera rika jestli command ukoncuje hru nebo ne
-     * @return false protoze command neukoncuje hru
+     * @return zalezi podle situace
      */
     @Override
     public boolean exit() {
