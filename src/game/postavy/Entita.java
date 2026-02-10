@@ -32,6 +32,7 @@ public class Entita {
 
     public Entita(String id){
         this.idItemu = new ArrayList<>();
+        this.inventar = new ArrayList<>();
         this.MAX_NOSNOST = 2;
     }
 
