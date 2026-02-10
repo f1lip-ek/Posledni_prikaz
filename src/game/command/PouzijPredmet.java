@@ -7,23 +7,29 @@ import game.postavy.Entita;
 
 import java.util.ArrayList;
 
+/**
+ * Trida pro command ktera dovoli hracovi pouzit predmet
+ */
 public class PouzijPredmet implements Command{
 
     private int cislo;
     private Entita hrac;
     private ArrayList<Item> itemy;
     private Dialog dialogy;
-    private ArrayList<Lokace> lokace;
 
 
-    public PouzijPredmet(int cislo, Entita hrac, ArrayList<Item> itemy, Dialog dialogy, ArrayList<Lokace> lokace) {
+    public PouzijPredmet(int cislo, Entita hrac, ArrayList<Item> itemy, Dialog dialogy) {
         this.cislo = cislo;
         this.hrac = hrac;
         this.itemy = itemy;
         this.dialogy = dialogy;
-        this.lokace = lokace;
     }
 
+    /**
+     * Metoda ktera dovoli hracovi pouzit predmet
+     * @param text id pouzivaneho predmetu
+     * @return potvrzeni o tom ze hrac pouzil predmet
+     */
     @Override
     public String execute(String text) {
         if (cislo == 1){
@@ -82,11 +88,20 @@ public class PouzijPredmet implements Command{
         }
     }
 
+    /**
+     * Metoda ktera rika jestli command ukoncuje hru nebo ne
+     * @return false protoze command neukoncuje hru
+     */
     @Override
     public boolean exit() {
         return false;
     }
 
+    /**
+     * Metoda ktera z id itemu udela objekt Item
+     * @param text id itemu
+     * @return objekt Itemu
+     */
     public Item getItem(String text){
         for (int i = 0; i < itemy.size(); i++) {
             if (itemy.get(i).getId().equals(text)){

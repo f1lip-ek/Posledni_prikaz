@@ -23,7 +23,7 @@ class PouzijPredmetTest {
         itemy = new ArrayList<>();
         itemy.add(new Item("kamera", "Sledovaci zarizeni"));
 
-        p = new PouzijPredmet(1, hrac, itemy, new Dialog(), new ArrayList<>());
+        p = new PouzijPredmet(1, hrac, itemy, new Dialog());
     }
 
     @Test
