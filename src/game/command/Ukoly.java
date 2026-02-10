@@ -6,6 +6,9 @@ import java.io.FileReader;
 import java.io.Reader;
 import java.util.Arrays;
 
+/**
+ * Trida pro command ktery vypisuje vsechny ukoly ve hre
+ */
 public class Ukoly implements Command{
 
     private Entita hrac;
@@ -14,8 +17,12 @@ public class Ukoly implements Command{
         this.hrac = hrac;
     }
 
-    public Ukoly(){}
 
+    /**
+     * Metoda ktera vypise vsechny ukoly ve hre
+     * @param text nic nedela
+     * @return text ve kterem jsou vsechny ukoly ve hre
+     */
     @Override
     public String execute(String text) {
         Gson gson = new Gson();
@@ -30,11 +37,20 @@ public class Ukoly implements Command{
         }
     }
 
+    /**
+     * Metoda ktera rika jestli command ukoncuje hru nebo ne
+     * @return false protoze command neukoncuje hru
+     */
     @Override
     public boolean exit() {
         return false;
     }
 
+    /**
+     * Metoda ktera obarvi ten ukol ktery je splnen
+     * @param text ten ukol ktery je splnen
+     * @return obarveny text
+     */
     public String getSpravnyRadek(String text){
         return "\u001B[34m" + text + "\u001B[0m";
     }
