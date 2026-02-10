@@ -32,7 +32,7 @@ public class Entita {
 
     public Entita(String id){
         this.idItemu = new ArrayList<>();
-
+        this.MAX_NOSNOST = 2;
     }
 
     public String getJmeno(){

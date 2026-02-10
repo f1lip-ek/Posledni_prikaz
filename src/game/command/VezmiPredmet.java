@@ -63,7 +63,7 @@ public class VezmiPredmet implements Command{
                 System.out.println(dialogy.getDialog(24, ""));
                 System.out.println(dialogy.getDialog(27, ""));
                 System.out.println("Zadej 1 pokud chces pretizit zbrane stroju");
-                if (new Scanner(System.in).nextInt() == 1){
+                if (new Scanner(System.in).next().equals("1")){
                     hrac.setVolba(1);
                     return dialogy.getDialog(25, "");
                 }else{
