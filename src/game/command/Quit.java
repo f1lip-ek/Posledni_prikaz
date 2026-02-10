@@ -30,6 +30,10 @@ public class Quit implements Command{
         };
     }
 
+    /**
+     * Metoda ktera rika jestli command ukoncuje hru nebo ne
+     * @return podle situace
+     */
     @Override
     public boolean exit() {
         return ukonceno;
