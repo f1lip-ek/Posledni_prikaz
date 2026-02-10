@@ -75,6 +75,10 @@ public class VezmiPredmet implements Command{
         }
     }
 
+    /**
+     * Metoda ktera rika jestli command ukoncuje hru nebo ne
+     * @return false protoze command neukoncuje hru
+     */
     @Override
     public boolean exit() {
         return false;
