@@ -14,6 +14,7 @@ import java.util.ArrayList;
  * Reprezentuje herní data načtená ze souboru JSON. Tato třída slouží jako
  * datový kontejner pro veškerý statický obsah hry, jako jsou předměty,
  * postavy, lokace a úkoly.
+ * @author Michaela Meitnarova
  */
 public class HraData {
 
