@@ -3,7 +3,10 @@ package game.dialog;
 import com.google.gson.Gson;
 
 import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 /**
@@ -22,8 +25,11 @@ public class Dialog {
      */
     private void nacistList(){
         Gson gson = new Gson();
-        try (Reader reader = new FileReader("resources/vypisyDoKonzole.json")) {
-            textyDoKonzole = gson.fromJson(reader, ArrayList.class);
+        try (InputStream input = Dialog.class.getResourceAsStream("/vypisyDoKonzole.json")) {
+            if(input == null){
+                throw new RuntimeException("Chyba při načítání JSON");
+            }
+            textyDoKonzole = gson.fromJson(new InputStreamReader(input, StandardCharsets.UTF_8), ArrayList.class);
         } catch (Exception e) {
             throw new RuntimeException("Chyba při načítání JSON: " + e.getMessage());
         }
