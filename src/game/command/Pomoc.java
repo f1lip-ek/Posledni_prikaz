@@ -2,9 +2,8 @@ package game.command;
 
 import com.google.gson.Gson;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.Reader;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 /**
@@ -19,8 +18,11 @@ public class Pomoc implements Command{
     @Override
     public String execute(String text) {
         Gson gson = new Gson();
-        try (Reader reader = new FileReader("resources/pomoc.json")) {
-            String[] pomoc = gson.fromJson(reader, String[].class);
+        try (InputStream input = Pomoc.class.getResourceAsStream("/pomoc.json")) {
+            if(input == null){
+                throw new RuntimeException("Chyba při načítání JSON");
+            }
+            String[] pomoc = gson.fromJson(new InputStreamReader(input, StandardCharsets.UTF_8), String[].class);
             return Arrays.toString(pomoc);
         } catch (Exception e) {
             throw new RuntimeException("Chyba při načítání JSON: " + e.getMessage());

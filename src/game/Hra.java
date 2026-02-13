@@ -37,7 +37,7 @@ public class Hra {
      */
     private void setListy(){
         this.sc = new Scanner(System.in);
-        this.data = HraData.loadGameDataFromResources("/gamedata.json");
+        this.data = HraData.loadGameDataFromResources("/gameData.json");
         this.prikazy = new HashMap<>();
         this.postavy = data.getPostavy().toArray(new Entita[0]);
         this.itemy = data.getItems();
