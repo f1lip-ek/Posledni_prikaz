@@ -1,20 +1,20 @@
 [
-  "ls -c",
-  "cd <misto>",
+  "\nls -c - prohledani moznych vychodu\n",
+  "cd <misto> - pohyb do jine mistnosti\n",
 
-  "get <predmet>",
-  "ls -p",
+  "get <predmet> - sebrani predmetu\n",
+  "ls -p - zobrazeni vsech moznych predmetu ktere lze sebrat\n",
 
-  "run <predmet>",
-  "cat -i",
+  "run <predmet> - pouziti nejakeho urciteho predmetu\n",
+  "cat -i - zobrazeni inventare\n",
 
-  "kill",
-  "exit",
+  "kill - timto muzes zabit protivnika kdyz si v boji\n",
+  "exit - timto se muzes vzdat a ummres\n",
 
-  "ls -q",
+  "ls -q - zobrazeni vsech questu\n",
 
   "start",
-  "upload",
+  "upload\n",
 
-  "help"
+  "help - vypsani vsech commandu ve hre\n"
 ]
