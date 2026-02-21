@@ -35,15 +35,15 @@ public class Konec implements Command{
             /*start*/
             if (hrac.getInventar().contains(getItem("usb"))){
                 konec = true;
-                return dialogy.getDialog(29, "");
+                return dialogy.getDialog(30, "");
             }else{
                 konec = false;
-                return "Nemas usb";
+                return "Nemas usb takze nemuzes spustit command start";
             }
         }else if (cislo == 2 && hrac.getAktualniLokace().getId().equals("terminal") && hrac.getInventar().contains(getItem("usb"))) {
             /*upload*/
             konec = true;
-            return dialogy.getDialog(30, "");
+            return dialogy.getDialog(31, "");
         } else {
             return "Nemuzes pouzit protoze nejsi ve spravne mistnosti";
         }
