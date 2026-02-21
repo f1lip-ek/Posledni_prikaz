@@ -15,7 +15,7 @@ public class Konec implements Command{
     private final Entita hrac;
     private final Dialog dialogy;
     private final ArrayList<Item> itemy;
-    private boolean konec = true;
+    private boolean konec = false;
 
     public Konec(int cislo, Entita hrac, Dialog dialogy, ArrayList<Item> itemy) {
         this.cislo = cislo;
