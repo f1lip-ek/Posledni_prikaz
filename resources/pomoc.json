@@ -1,20 +1,20 @@
 [
-  "\nls -c - prohledani moznych vychodu\n",
-  "cd <misto> - pohyb do jine mistnosti\n",
+  "\nls -c - prohledani moznych vychodu",
+  "\ncd <id mista> - pohyb do jine mistnosti",
 
-  "get <predmet> - sebrani predmetu\n",
-  "ls -p - zobrazeni vsech moznych predmetu ktere lze sebrat\n",
+  "\nget <id predmetu> - sebrani predmetu",
+  "\nls -p - zobrazeni vsech moznych predmetu ktere lze sebrat",
 
-  "run <predmet> - pouziti nejakeho urciteho predmetu\n",
-  "cat -i - zobrazeni inventare\n",
+  "\nrun <id predmetu> - pouziti nejakeho urciteho predmetu",
+  "\ncat -i - zobrazeni inventare",
 
-  "kill - timto muzes zabit protivnika kdyz si v boji\n",
-  "exit - timto se muzes vzdat a ummres\n",
+  "\nkill - timto muzes zabit protivnika kdyz si v boji",
+  "\nexit - timto se muzes vzdat a ummres",
 
-  "ls -q - zobrazeni vsech questu\n",
+  "\nls -q - zobrazeni vsech questu",
 
-  "start",
-  "upload\n",
+  "\nstart",
+  "upload - dva finalni prikazy, ktere jdou pouzit v mistnosti s terminalem",
 
-  "help - vypsani vsech commandu ve hre\n"
+  "\nhelp - vypsani vsech commandu ve hre\n"
 ]
