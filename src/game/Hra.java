@@ -71,6 +71,7 @@ public class Hra {
         prikazy.put("cd", new Pohyb(2, hrac, data.getLokace(), data.getItems().get(2)));
         prikazy.put("start", new Konec(1, hrac, dialogy, itemy));
         prikazy.put("upload", new Konec(2, hrac, dialogy, itemy));
+        prikazy.put("uloz", new UlozitHru(hrac));
     }
 
     /**

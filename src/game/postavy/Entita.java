@@ -3,12 +3,13 @@ package game.postavy;
 import game.itemy.Item;
 import game.lokace.Lokace;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Trida ktera slouzi jako sablona ke vsem postavam
  */
-public class Entita {
+public class Entita implements Serializable {
 
     private String id;
 

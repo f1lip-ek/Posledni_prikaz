@@ -1,9 +1,11 @@
 package game.itemy;
 
+import java.io.Serializable;
+
 /**
  * Trida ktera slouzi jako sablona ke vsem itemum
  */
-public class Item {
+public class Item implements Serializable {
 
     private String id;
 

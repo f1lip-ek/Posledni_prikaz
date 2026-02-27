@@ -1,12 +1,14 @@
 package game.lokace;
 
 import game.itemy.Item;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Trida ktera slouzi jako sablona ke vsem lokacim
  */
-public class Lokace {
+public class Lokace implements Serializable {
 
     private String id;
     private String nazev;
